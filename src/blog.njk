@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: default-blog
 pagination:
     data: collections.pagedPosts
     size: 1
     alias: paged
-permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}index.html"
+permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}blog.html"
 ---
 
 <div class="flex flex-wrap -mx-2">

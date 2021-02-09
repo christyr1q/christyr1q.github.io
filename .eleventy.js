@@ -13,7 +13,9 @@ module.exports = (config) => {
   config.addWatchTarget("src/assets/js/");
 
   config.addLayoutAlias('default', 'layouts/default.njk');
+  config.addLayoutAlias('default-blog', 'layouts/default-blog.njk');
   config.addLayoutAlias('post', 'layouts/post.njk');
+  config.addLayoutAlias('home', 'layouts/home.njk');
 
   config.addFilter('readableDate', require('./lib/filters/readableDate'));
   config.addFilter('minifyJs', require('./lib/filters/minifyJs'));

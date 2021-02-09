@@ -4,12 +4,15 @@
         "url": "/about"
     },
     {
-        "label": "Tag List",
-        "url": "/tags"
+        "label": "Products",
+        "url": "/products"
     },
     {
-        "label": "GitHub",
-        "url": "https://mousebird.github.io/WhirlyGlobe/",
-        "newTab": true
+        "label": "Apps",
+        "url": "/apps"
+    },
+    {
+        "label": "Blog",
+        "url": "/blog.html"
     }
 ]
