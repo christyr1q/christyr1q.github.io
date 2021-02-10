@@ -5,6 +5,8 @@ layout: home
 
 ### About Us
 
+![Globe and map](assets/img/mainbanner.jpg)
+
 mousebird consulting inc does geospatial data display for mobile devices and the back end to support it.  That's iOS, Android and the active services to support them.
 
 Our work can be found in a wide variety of weather, aviation, education and miscellaneous apps.  We've been warming the pockets of millions of users worldwide for at least a decade.
