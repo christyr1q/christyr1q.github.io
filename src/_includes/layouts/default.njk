@@ -41,15 +41,13 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 </head>	
 
-<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
+<body class="flex flex-col h-screen text-gray-800 break-words bg-mousebirdBlue">
     {% include "partials/header.njk" %}
-    <main class="mx-7 lg:mx-6 mt-32 flex-grow">
+    <main class="mx-7 lg:mx-6 mt-32 flex-grow bg-white">
         {% if layout === "post" %}
         {{ content | safe }}
         {% else %}
-        <div class="max-w-5xl mx-auto">
-            {{ content | safe }}
-        </div>
+                {{ content | safe }}
         {% endif %}
     </main>
     {% include "partials/footer.njk" %}

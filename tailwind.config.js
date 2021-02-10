@@ -20,6 +20,7 @@ module.exports = {
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
+      mousebirdBlue: '#00557e',
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
