@@ -1,0 +1,15 @@
+{% macro leftImage(file, content='') %}
+<div class="flex grid-rows-2 gap-4" >
+
+<div class="prose img mt-0 mb-0">
+<img src="{{ rootdir }}/assets/img/{{ file }}" style="float:left">
+</div>
+
+<div class="prose">
+</div>
+<p>
+{{ content }}
+</p>
+</div>
+
+{% endmacro %}

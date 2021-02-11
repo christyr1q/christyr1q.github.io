@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+    .postContent {
+        h2, h3, h4, h5, h6 {
+            @apply prose border-b-0;
+        }
+    }
+
     h2, h3, h4, h5, h6 {
         font-family:    Museo-500;
         padding-top:    1em;
         line-height:    2.4em;
-        border-bottom:  solid 1px #000;
+        @apply border-b-2;
     }
     p {
         font-family:   Roboto;

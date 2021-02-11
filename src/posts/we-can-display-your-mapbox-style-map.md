@@ -3,8 +3,7 @@ layout: post
 title: "We Can Display Your Mapbox Style Map"
 date: 2020-11-02
 thumb: "banner_web2.png"
-tags: 
-    - "whirlyglobe"
+tags: ["whirlyglobe"]
 
 ---
 

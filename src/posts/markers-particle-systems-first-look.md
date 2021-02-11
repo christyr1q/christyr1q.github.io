@@ -11,6 +11,8 @@ tags:
 
 ---
 
+{% import 'macros/imgctl.njk' as imgctl with context %}
+
 So that's working.  It can also display a series of images, you just give it a list of textures and a period over which to switch them and off it goes.
 
 And it's smoooth.  Why so smooth?  Because I do the switching on the rendering thread.  And that makes it complex.  For me, anyway, not you.
@@ -75,9 +77,7 @@ But this is pretty much how it'll work for the WhirlyGlobe 1.2 release.
 
 ## Particle Systems
 
-These are never going to be full desktop graphics particle systems or non-real time animation particle systems.  They'll be pretty simple.
-
-![fountains]({{ rootPath }}/assets/img/fountains.png)
+{{ imgctl.leftImage('fountains.png', content='These are never going to be full desktop graphics particle systems or non-real time animation particle systems.  They'll be pretty simple.' ) }}
 
 ## Particle System Code
 
