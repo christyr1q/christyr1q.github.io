@@ -3,9 +3,9 @@ title: mousebird consulting inc
 layout: home
 ---
 
-### About Us
-
 ![Globe and map](assets/img/mainbanner.jpg)
+
+### About Us
 
 mousebird consulting inc does geospatial data display for mobile devices and the back end to support it.  That's iOS, Android and the active services to support them.
 
