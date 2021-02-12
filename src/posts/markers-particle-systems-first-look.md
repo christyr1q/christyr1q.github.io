@@ -83,7 +83,7 @@ But this is pretty much how it'll work for the WhirlyGlobe 1.2 release.
 These are never going to be full desktop graphics particle systems or non-real time animation particle systems.  They'll be pretty simple.
 {% endset %}
 
-{{ imgctl.leftImage('fountains.png', rightContent ) }}
+{{ imgctl.leftImage('fountains.png', content = rightContent, caption = "A couple of fountains" ) }}
 
 ## Particle System Code
 

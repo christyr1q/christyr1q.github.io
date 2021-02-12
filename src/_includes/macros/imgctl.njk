@@ -1,8 +1,16 @@
-{% macro leftImage(file, content='') %}
+{% macro leftImage(file, content='', alt='', caption = '') %}
 <div class="flex grid-rows-2 gap-4" >
 
-<div class="prose img mt-0 mb-0">
-<img src="{{ rootdir }}/assets/img/{{ file }}">
+<div class="prose img mt-0 mb-0 shadow-lg">
+<figure>
+<img src="{{ rootdir }}/assets/img/{{ file }}" alt="{{ alt }}">
+{% if caption != '' %}
+<figcaption>
+<p class="text-center">
+{{ caption }}
+</p>
+</figcaption>
+{% endif %}
 </div>
 
 <div class="prose">
