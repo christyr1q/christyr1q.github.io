@@ -1,9 +1,31 @@
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = (config) => {
   config.addPlugin(pluginTailwind, {
     src: 'src/assets/css/*'
   });
+  config.addPlugin(syntaxHighlight, {
+
+      // e.g. Use syntax highlighters in njk and md Eleventy templates (not liquid)
+      templateFormats: ["njk", "md"],
+  
+      // init callback lets you customize Prism
+      // init: function({ Prism }) {
+      //   Prism.languages.myCustomLanguage = /* */;
+      // }
+  
+      // Added in 3.0, set to true to always wrap lines in `<span class="highlight-line">`
+      // The default (false) only wraps when line numbers are passed in.
+      alwaysWrapLineHighlights: false,
+  
+      // Added in 3.0.2, set to false to opt-out of pre-highlight removal of leading
+      // and trailing whitespace
+      trim: true,
+  
+      // Added in 3.0.4, change the separator between lines (you may want "\n")
+      // lineSeparator: "<br>",
+    });
 
   config.setDataDeepMerge(true);
 
