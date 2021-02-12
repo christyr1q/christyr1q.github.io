@@ -2,9 +2,7 @@
 layout: post
 title: "WhirlyGlobe-Maply 3.0 Integration & Housekeeping"
 date: 2020-11-10
-thumb: "banner_web2.png"
-tags: 
-    - "whirlyglobe"
+tags: whirlyglobe
 
 ---
 

@@ -1,7 +1,29 @@
+{% macro centerImage(file, alt='', caption = '') %}
+<div class="flex justify-self-center">
+
+<div class="prose figure">
+<img src="{{ rootdir }}/assets/img/{{ file }}" alt="{{ alt }}">
+
+{% if caption != '' %}
+<figcaption>
+<div class="prose p text-center">
+{{ caption }}
+</div>
+</figcaption>
+{% endif %}
+
+</div>
+
+</div>
+
+
+{% endmacro %}
+
 {% macro leftImage(file, content='', alt='', caption = '') %}
 <div class="flex grid-rows-2 gap-4" >
 
 <div class="prose img mt-0 mb-0 shadow-lg">
+
 <figure>
 <img src="{{ rootdir }}/assets/img/{{ file }}" alt="{{ alt }}">
 {% if caption != '' %}
@@ -11,6 +33,8 @@
 </p>
 </figcaption>
 {% endif %}
+</figure>
+
 </div>
 
 <div class="prose">

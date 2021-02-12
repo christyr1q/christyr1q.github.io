@@ -2,23 +2,16 @@
 layout: post
 title: "We Can Display Your Mapbox Style Map"
 date: 2020-11-02
-thumb: "banner_web2.png"
+thumb: "index_saildrone.png"
 tags: ["whirlyglobe"]
 
 ---
 
+{% import 'macros/imgctl.njk' as imgctl with context %}
+
 When people think of us, most think of WhirlyGlobe. It's the iconic interface in weather apps like [DarkSky](https://darksky.net/app) and tons of aviation apps you'd only know if you're a pilot.
 
-
-
-| [![img](https://lh3.googleusercontent.com/-2XD6YsMrCOI/X6A4KBqsjRI/AAAAAAAAEjk/87HOR2Q-NNM7RAHGyFg94xxE3T-adZzkwCLcBGAsYHQ/w400-h175/Screen%2BShot%2B2020-11-02%2Bat%2B8.42.32%2BAM.png)](https://lh3.googleusercontent.com/-2XD6YsMrCOI/X6A4KBqsjRI/AAAAAAAAEjk/87HOR2Q-NNM7RAHGyFg94xxE3T-adZzkwCLcBGAsYHQ/Screen%2BShot%2B2020-11-02%2Bat%2B8.42.32%2BAM.png) |
-| ------------------------------------------------------------ |
-| Saildrone Forecast                                           |
-
-
 But did you know we also make a good 2D slippy map? That's Maply and it's completely open source.
-
-
 
 Our support for Mapbox style maps has gotten really good this year, but we'd like to make it better!
 
@@ -28,13 +21,7 @@ Vector Tiles and Mapbox Style Sheets are a potent combo and they've won the geos
 
 Maply has supported Vector Tiles for years, but the Mapbox Style Sheet support lagged.... until this year.
 
-
-
-| [![MapTiler Streets](https://lh3.googleusercontent.com/-ntNhXiGb33Q/X6AxRcktUPI/AAAAAAAAEjY/F38uworBUBg9L8dUBVVBQKXPdtuIPCGgACLcBGAsYHQ/w320-h200/VectorTiles.jpg)](https://lh3.googleusercontent.com/-ntNhXiGb33Q/X6AxRcktUPI/AAAAAAAAEjY/F38uworBUBg9L8dUBVVBQKXPdtuIPCGgACLcBGAsYHQ/VectorTiles.jpg) |
-| ------------------------------------------------------------ |
-| MapTiler Streets                                             |
-
-
+{{ imgctl.centerImage('vectortiles.jpg', caption = 'A couple of fountains' ) }}
 
 With the recent move to a unified code base we've got one single Mapbox Style Sheet implementation for iOS and Android.... and wherever else we port to. On iOS we upgraded our shaders to react to zoom level changes and it looks fantastic.
 

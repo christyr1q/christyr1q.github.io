@@ -2,7 +2,7 @@
 layout: post
 title: "An Offer to the Mobile Mapping Community"
 date: 2020-12-10
-thumb: "vectortiles.jpg"
+thumb: "index_vectortiles.jpg"
 tags: mapbox
 
 --- 
