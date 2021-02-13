@@ -2,6 +2,7 @@
 layout: post
 title: "Closing of the Mapbox APIs"
 date: 2020-12-08
+thumb: "index_mapbox_opensource.png"
 tags: mapbox
 
 --- 
