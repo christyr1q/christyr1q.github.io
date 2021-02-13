@@ -2,11 +2,12 @@
 layout: post
 title: "Vector Features / Mapbox Style Sheet Roadmap"
 date: 2020-05-19
-thumb: "banner_web2.png"
-tags: 
-    - "whirlyglobe"
+thumb: "vector-features-roadmap-1.jpeg"
+tags: ["whirlyglobe"]
 
 ---
+
+{% import 'macros/imgctl.njk' as imgctl with context %}
 
 Mapbox Style Sheet support has been ported to Android! Look for it in 3.1.
 
@@ -15,10 +16,6 @@ But this post is really about vector features and money. Let's dive in.
 ### Vector Maps
 
 You know what vector maps are. Take some points, lines, and polygons and turn them into visual maps.
-
-[![img](https://1.bp.blogspot.com/-GRM2Nu93tvw/XeWVSJt0bsI/AAAAAAAAEX4/xSoSy32UQw8MQRcBlLjuAL83qu11q7fZgCPcBGAYYCw/s320/IMG_0114.jpeg)](https://1.bp.blogspot.com/-GRM2Nu93tvw/XeWVSJt0bsI/AAAAAAAAEX4/xSoSy32UQw8MQRcBlLjuAL83qu11q7fZgCPcBGAYYCw/s1600/IMG_0114.jpeg)
-
-
 
 Let's start with source data which is maybe GeoPackage or ShapeFiles, sometimes Mapbox Vector Tiles or even your own weird format. Then style it. Maybe you use SLD or Mapbox's Style Spec. Some people have their own formats and a lot just do it in code. That's how you get visuals from data.
 
@@ -36,9 +33,9 @@ With WG-Maply 3.0 released and working, now is the time to add a whole bunch of 
 
 ### Zoom Level
 
-***What zoom level is this\*** is one of the fundamental questions in laying out a flat map. Alas, our maps are not flat and it’s a much more complicated question than it seems. Check out this spherical mercator map splatted on the globe.
+***What zoom level is this*** is one of the fundamental questions in laying out a flat map. Alas, our maps are not flat and it’s a much more complicated question than it seems. Check out this spherical mercator map splatted on the globe.
 
-[![img](https://1.bp.blogspot.com/-dQnZ0n5IWko/XsWXiZHbPQI/AAAAAAAAEbo/1zXVoPkwDfcnxX-_4c-IF038Us6bEmCRgCLcBGAsYHQ/s320/GlobeZoomNumbers-82.tiff)](https://1.bp.blogspot.com/-dQnZ0n5IWko/XsWXiZHbPQI/AAAAAAAAEbo/1zXVoPkwDfcnxX-_4c-IF038Us6bEmCRgCLcBGAsYHQ/s1600/GlobeZoomNumbers-82.tiff)
+{{ imgctl.centerImage('vector-features-roadmap-2.jpg' ) }}
 
 What zoom level are we at? Well…. it’s complicated. That particular map might be a zoom level 6. But if we head north, without changing our elevation we’re quickly going to be at zoom level 5. Why? Because the tiles get much smaller.
 
@@ -52,9 +49,7 @@ With a dependable zoom level calculation we use on specific features a lot of ot
 
 Wide Vectors are just linear features with width and proper junctions. We have a wide vector implementation, but it’s got problems: It’s old and leans on geometry to do things it could do in the shaders and it’s missing a bunch of features.
 
-[![img](https://1.bp.blogspot.com/-WynNbtf8Mwc/XsWYG_nYXaI/AAAAAAAAEbw/3YHTdysZE-0m1X7DodUTfznGIO7R9VSIgCLcBGAsYHQ/s320/WideLineExample.png)](https://1.bp.blogspot.com/-WynNbtf8Mwc/XsWYG_nYXaI/AAAAAAAAEbw/3YHTdysZE-0m1X7DodUTfznGIO7R9VSIgCLcBGAsYHQ/s1600/WideLineExample.png)
-
-
+{{ imgctl.centerImage('vector-features-roadmap-3.png' ) }}
 
 Some of the basic attributes should vary by zoom level including width, color, opacity and offset.
 
@@ -62,20 +57,11 @@ Offset is a big one we don't have now. It would let you do insets and borders ar
 
 All the standard junction and cap types need to be supported. We just do bevel right now.
 
-
-
-| [![img](https://1.bp.blogspot.com/-KDnDbjeQV9w/XsWZWhAKhwI/AAAAAAAAEcE/87F_Dr-DOLcfZAxiNi2MztPoDby1DS82QCLcBGAsYHQ/s400/Screen%2BShot%2B2020-05-20%2Bat%2B1.54.12%2BPM.png)](https://1.bp.blogspot.com/-KDnDbjeQV9w/XsWZWhAKhwI/AAAAAAAAEcE/87F_Dr-DOLcfZAxiNi2MztPoDby1DS82QCLcBGAsYHQ/s1600/Screen%2BShot%2B2020-05-20%2Bat%2B1.54.12%2BPM.png) |
-| ------------------------------------------------------------ |
-| https://www.w3.org/TR/SVG/painting.html#StrokeLinejoinProperty |
-
+{{ imgctl.centerImage('vector-features-roadmap-4.png' ) }}
 
 We have some facility for dots and dashes, but those need to be updated and tested properly. Much of this logic just needs to go into a more intelligent shader.
 
-
-
-[![img](https://1.bp.blogspot.com/-2D9hu0gaWac/XsWYpxwO7gI/AAAAAAAAEb8/dWfm3FDScnAslmGtHvgC4U7LkGwMa5sIQCLcBGAsYHQ/s320/WideLIneSpiral.gif)](https://1.bp.blogspot.com/-2D9hu0gaWac/XsWYpxwO7gI/AAAAAAAAEb8/dWfm3FDScnAslmGtHvgC4U7LkGwMa5sIQCLcBGAsYHQ/s1600/WideLIneSpiral.gif)
-
-
+{{ imgctl.centerImage('vector-features-roadmap-5.gif' ) }}
 
 ### Polygons
 
@@ -89,11 +75,7 @@ Text support gets tricky, particular with two platforms. It does work, but we ne
 
 As with lines and polygons, we should be able to vary color, opacity and size continuously on zoom level.
 
-
-
-[![img](https://1.bp.blogspot.com/-SLy8qfAXHu4/XsWdZx4uHdI/AAAAAAAAEck/EcDc5XFKTU002hWKSbZ1MCAOPPMLDb_RQCLcBGAsYHQ/s1600/LabelCutout.png)](https://1.bp.blogspot.com/-SLy8qfAXHu4/XsWdZx4uHdI/AAAAAAAAEck/EcDc5XFKTU002hWKSbZ1MCAOPPMLDb_RQCLcBGAsYHQ/s1600/LabelCutout.png)
-
-
+{{ imgctl.centerImage('vector-features-roadmap-6.png' ) }}
 
 Right now outlines are kind of blurry. Ignoring the low level details of why, this is fixable.
 
@@ -103,21 +85,15 @@ And here's a specific Mapbox Style Spec feature: Support for their wacky font pa
 
 Here's the really big feature for layout. Making labels follow lines. That one would be huge. It'll also be a lot of work. Again, looking at the aviation users here. I know you want this.
 
-
-[![img](https://1.bp.blogspot.com/-zw5Qqq-cJTk/XsWafqSKknI/AAAAAAAAEcQ/ZkTDSXC2bWk9tXIYvmqZ7pDZOgK60ucbQCLcBGAsYHQ/s320/Screen%2BShot%2B2020-05-20%2Bat%2B1.59.24%2BPM.png)](https://1.bp.blogspot.com/-zw5Qqq-cJTk/XsWafqSKknI/AAAAAAAAEcQ/ZkTDSXC2bWk9tXIYvmqZ7pDZOgK60ucbQCLcBGAsYHQ/s1600/Screen%2BShot%2B2020-05-20%2Bat%2B1.59.24%2BPM.png)
-
+{{ imgctl.centerImage('vector-features-roadmap-7.png' ) }}
 
 But general Mapbox Style Sheet users would like this too.
-
-
 
 ### Screen Objects
 
 We have markers in the toolkit and we've got text. So if you want to make a highway shield or something you can just stick one on top of the other, right?
 
-[![img](https://1.bp.blogspot.com/-MjxGNJL3EVk/XsWan_SzoDI/AAAAAAAAEcU/3rZOriI9j18Z4AFhsCOJudotEaxd18btQCLcBGAsYHQ/s320/Screen%2BShot%2B2020-05-20%2Bat%2B1.59.06%2BPM.png)](https://1.bp.blogspot.com/-MjxGNJL3EVk/XsWan_SzoDI/AAAAAAAAEcU/3rZOriI9j18Z4AFhsCOJudotEaxd18btQCLcBGAsYHQ/s1600/Screen%2BShot%2B2020-05-20%2Bat%2B1.59.06%2BPM.png)
-
-
+{{ imgctl.centerImage('vector-features-roadmap-8.png' ) }}
 
 Yeah, kinda. It'll work until you see those features intersecting each other and then it looks weird. This happens a lot with aviation symbols.
 

@@ -21,7 +21,7 @@ Vector Tiles and Mapbox Style Sheets are a potent combo and they've won the geos
 
 Maply has supported Vector Tiles for years, but the Mapbox Style Sheet support lagged.... until this year.
 
-{{ imgctl.centerImage('vectortiles.jpg', caption = 'A couple of fountains' ) }}
+{{ imgctl.centerImage('vectortiles.jpg', caption = 'MapTiler Streets' ) }}
 
 With the recent move to a unified code base we've got one single Mapbox Style Sheet implementation for iOS and Android.... and wherever else we port to. On iOS we upgraded our shaders to react to zoom level changes and it looks fantastic.
 
