@@ -24,7 +24,7 @@ As the name suggests, we are consultants.  If you have a geospatial or weather p
 
 You can talk to us at <a href="mailto:contact@mousebirdconsulting.com" target="_top">contact@mousebirdconsulting.com</a>.
 
-Please join the <a href="http://eepurl.com/D30CD" target="_blank">mailing list</a> for infrequent announcements, usually related to <a href="http://mousebird.github.io/WhirlyGlobe" target="_blank">WhirlyGlobe-Maply</a>.
+Please join the [mailing list]("http://eepurl.com/D30CD") for infrequent announcements, usually related to [WhirlyGlobe-Maply](href="http://mousebird.github.io/WhirlyGlobe").
 
 Check out our [blog](/blog.html) for technical discussion.
 

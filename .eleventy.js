@@ -1,5 +1,7 @@
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
+const mila = require("markdown-it-link-attributes");
 
 module.exports = (config) => {
   config.addPlugin(pluginTailwind, {
@@ -27,6 +29,18 @@ module.exports = (config) => {
       // lineSeparator: "<br>",
     });
 
+  let markdownItOptions = {
+    html: true
+  };
+  let milaOptions = {
+    attrs: {
+      target: "_blank",
+      rel: "noopener noreferrer"
+    }
+  };
+  let markdownLib = markdownIt(markdownItOptions).use(mila, milaOptions);
+  config.setLibrary("md", markdownLib);
+  
   config.setDataDeepMerge(true);
 
   config.addPassthroughCopy('src/assets/img/**/*');
