@@ -17,6 +17,7 @@
     }
     p {
         font-family:   Roboto;
+        @apply text-lg;
     }
     body {
         font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,helvetica,Arial,sans-serif;
