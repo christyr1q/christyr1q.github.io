@@ -24,9 +24,9 @@
 {# Image on the left, party on the right #}
 
 {% macro leftImage(file, content='', alt='', caption = '') %}
-<div class="flex grid-rows-2 gap-4" >
+<div class="flex w-full grid-rows-2 gap-4" >
 
-<div class="prose img mt-0 mb-0 shadow-lg rounded">
+<div class="prose img min-w-min mt-0 mb-0 shadow-lg rounded">
 
 <figure>
 <img src="{{ rootdir }}/assets/img/{{ file }}" alt="{{ alt }}">
@@ -54,6 +54,7 @@
 {% macro appInstance(file, title='', content='', alt='', url='') %}
 <div class="flex grid-rows-2 gap-4" >
 
+<div class="md:flex-shrink-0">
 <div class="prose img mt-0 mb-0 shadow-lg rounded">
 
 <figure>
@@ -70,6 +71,7 @@
 {% endif %}
 </figure>
 
+</div>
 </div>
 
 <div class="prose">
