@@ -28,7 +28,7 @@ content = "FlyQ EFB is one of the popular iOS aviation apps. It's used by privat
 ) }}
 
 {{ imgctl.appInstance('icon_fielda.png', title = 'Fielda Freedom',
-content = "Manage your field activities with Fielda Freedom, a native iPhone and an iPad application. Fielda Freedom gives secure and instant access to all your assets and field activities. Create inspections and service orders on the go — with or without a steady Internet connection." 
+content = "This app is used by utilities to manage their activities in the field.  It pairs an intelligent offline syncing system with some rather challenging maps and a very customizable display system.  We did the map, of course, and some of the database work." 
 ) }}
 
 {{ imgctl.appInstance('icon_saildrone.png', title = 'Saildrone Forecast',
