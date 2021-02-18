@@ -1,3 +1,5 @@
+{# Centers an image with a bit of figure around it #}
+
 {% macro centerImage(file, alt='', caption = '') %}
 <div class="flex justify-self-center">
 
@@ -19,6 +21,8 @@
 
 {% endmacro %}
 
+{# Image on the left, party on the right #}
+
 {% macro leftImage(file, content='', alt='', caption = '') %}
 <div class="flex grid-rows-2 gap-4" >
 
@@ -38,6 +42,39 @@
 </div>
 
 <div class="prose">
+{{ content }}
+</div>
+
+</div>
+
+{% endmacro %}
+
+{# Used on the mousebird app page, similar to leftImage #}
+
+{% macro appInstance(file, title='', content='', alt='', url='') %}
+<div class="flex grid-rows-2 gap-4" >
+
+<div class="prose img mt-0 mb-0 shadow-lg rounded">
+
+<figure>
+<a href="{{ url }}">
+<img src="{{ rootdir }}/assets/img/{{ file }}" alt="{{ alt }}">
+</a>
+
+{% if caption != '' %}
+<figcaption>
+<p class="text-center">
+{{ caption }}
+</p>
+</figcaption>
+{% endif %}
+</figure>
+
+</div>
+
+<div class="prose">
+<h4> {{ title }} </h3>
+
 {{ content }}
 </div>
 

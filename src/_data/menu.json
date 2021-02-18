@@ -1,9 +1,5 @@
 [
     {
-        "label": "About",
-        "url": "/about"
-    },
-    {
         "label": "Products",
         "url": "/products"
     },
@@ -14,5 +10,9 @@
     {
         "label": "Blog",
         "url": "/blog.html"
+    },
+    {
+        "label": "About",
+        "url": "/about"
     }
 ]

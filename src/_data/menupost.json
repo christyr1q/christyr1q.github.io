@@ -6,5 +6,9 @@
     {
         "label": "Topics",
         "url": "/tags"
+    },
+    {
+        "label": "About",
+        "url": "/about"
     }
 ]

@@ -1,7 +1,0 @@
-{
-    "name": "mousebird consulting",
-    "homepage": "https://mousebird.github.io/mousebird/",
-    "bio": "We make the WhirlyGlobe-Maply geospatial display toolkit for mobile devices.  It's used in some of the most popular aviation, weather and GIS apps for iOS and Android.",
-    "thanks": "This site is built on 11ty and Tailwind.js.  Special thanks to Dafiul Haq for the vredeburg template which we used as a basis.",
-    "email": "contact@mousebirdconsulting.com"
-}
