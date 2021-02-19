@@ -7,9 +7,6 @@ date: 2012-03-01
 
 ---
 
-
-
-
 I'm pleased to announce the release of [Live Globe 1.0](https://itunes.apple.com/us/app/live-globe/id501997258?mt=8) on the app store.  This app really pushes WhirlyGlobe to its limits in some interesting ways.
 
 Live Globe is actually the original WhirlyGlobe app and the publisher, Hyperwords, is my first WhirlyGlobe client.  There's some interesting history there, but first a video.

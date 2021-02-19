@@ -11,7 +11,7 @@ I’ve never been happy with elevation support in the toolkit. With the move to 
 
 But before I dive in, a bit about terminology. Aviation developers tend to refer to a simulated display of where a pilot is and where they're going as ***Synthetic Vision***. The rest of you might just think of it as elevation support in the toolkit. It's the same thing.
 
-{% ImagePlace src="elevation-synthetic-vision-1.jpg", caption = 'Mt. Rainier from Mapbox Satellite with elevation', justify='left' %}
+{% ImagePlace src="elevation-synthetic-vision-1.jpg", caption = 'Mt. Rainier from Mapbox Satellite with elevation', justify='center' %}
 {% endImagePlace %}
 
 I’m going to try to put together a small group of WhirlyGlobe-Maply users to sponsor a new development effort. Let’s look at what that would be.

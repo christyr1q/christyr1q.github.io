@@ -7,8 +7,6 @@ tags: "whirlyglobe"
 
 ---
 
-{% import 'macros/imgctl.njk' as imgctl with context %}
-
 Here's a short note on Mapbox Style Sheet support in 2.6.5: It's waaaay better.
 
 I did some work for a client on MapTiler and Mapbox map sources. You get to benefit. Open source!
@@ -19,13 +17,16 @@ I did some work for a client on MapTiler and Mapbox map sources. You get to bene
 
 We were focused on [Map Tiler](https://maptiler.com/) primarily, so those work best. You can find examples for their Basic, Hybrid Satellite, and Streets styles in the AutoTester app.
 
-{{ imgctl.centerImage('mapbox-style-support-2.jpeg', caption = 'MapTiler Streets' ) }}
+{% ImagePlace src="mapbox-style-support-2.jpeg", caption = 'MapTiler Streets', justify='center' %}
+{% endImagePlace %}
 
 As for [Mapbox](https://mapbox.com/), we were trying out their Satellite offerings so you'll see examples for Satellite and Hybrid Satellite. Streets will probably kind of work, but it wasn't my priority.
 
-{{ imgctl.centerImage('mapbox-style-support-3.jpeg', caption = 'Mapbox Satellite Streets' ) }}
+{% ImagePlace src="mapbox-style-support-3.jpeg", caption = 'Mapbox Satellite Streets', justify='center' %}
 
 You'll need to add in your own Map Tiler or Mapbox tokens. I'm not that much of a sucker.
+
+{% endImagePlace %}
 
 ### Mapbox Kinda Map
 

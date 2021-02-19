@@ -7,8 +7,6 @@ tags: ["whirlyglobe"]
 
 ---
 
-{% import 'macros/imgctl.njk' as imgctl with context %}
-
 Mapbox Style Sheet support has been ported to Android! Look for it in 3.1.
 
 But this post is really about vector features and money. Let's dive in.
@@ -35,7 +33,8 @@ With WG-Maply 3.0 released and working, now is the time to add a whole bunch of 
 
 ***What zoom level is this*** is one of the fundamental questions in laying out a flat map. Alas, our maps are not flat and it’s a much more complicated question than it seems. Check out this spherical mercator map splatted on the globe.
 
-{{ imgctl.centerImage('vector-features-roadmap-2.jpg' ) }}
+{% ImagePlace src="vector-features-roadmap-2.jpg", justify='center' %}
+{% endImagePlace %}
 
 What zoom level are we at? Well…. it’s complicated. That particular map might be a zoom level 6. But if we head north, without changing our elevation we’re quickly going to be at zoom level 5. Why? Because the tiles get much smaller.
 
@@ -49,7 +48,8 @@ With a dependable zoom level calculation we use on specific features a lot of ot
 
 Wide Vectors are just linear features with width and proper junctions. We have a wide vector implementation, but it’s got problems: It’s old and leans on geometry to do things it could do in the shaders and it’s missing a bunch of features.
 
-{{ imgctl.centerImage('vector-features-roadmap-3.png' ) }}
+{% ImagePlace src="vector-features-roadmap-3.png", justify='center' %}
+{% endImagePlace %}
 
 Some of the basic attributes should vary by zoom level including width, color, opacity and offset.
 
@@ -57,11 +57,13 @@ Offset is a big one we don't have now. It would let you do insets and borders ar
 
 All the standard junction and cap types need to be supported. We just do bevel right now.
 
-{{ imgctl.centerImage('vector-features-roadmap-4.png' ) }}
+{% ImagePlace src="vector-features-roadmap-4.png", justify='center' %}
+{% endImagePlace %}
 
 We have some facility for dots and dashes, but those need to be updated and tested properly. Much of this logic just needs to go into a more intelligent shader.
 
-{{ imgctl.centerImage('vector-features-roadmap-5.gif' ) }}
+{% ImagePlace src="vector-features-roadmap-5.gif", justify='center' %}
+{% endImagePlace %}
 
 ### Polygons
 
@@ -75,7 +77,8 @@ Text support gets tricky, particular with two platforms. It does work, but we ne
 
 As with lines and polygons, we should be able to vary color, opacity and size continuously on zoom level.
 
-{{ imgctl.centerImage('vector-features-roadmap-6.png' ) }}
+{% ImagePlace src="vector-features-roadmap-6.png", justify='center' %}
+{% endImagePlace %}
 
 Right now outlines are kind of blurry. Ignoring the low level details of why, this is fixable.
 
@@ -85,7 +88,8 @@ And here's a specific Mapbox Style Spec feature: Support for their wacky font pa
 
 Here's the really big feature for layout. Making labels follow lines. That one would be huge. It'll also be a lot of work. Again, looking at the aviation users here. I know you want this.
 
-{{ imgctl.centerImage('vector-features-roadmap-7.png' ) }}
+{% ImagePlace src="vector-features-roadmap-7.png", justify='center' %}
+{% endImagePlace %}
 
 But general Mapbox Style Sheet users would like this too.
 
@@ -93,7 +97,8 @@ But general Mapbox Style Sheet users would like this too.
 
 We have markers in the toolkit and we've got text. So if you want to make a highway shield or something you can just stick one on top of the other, right?
 
-{{ imgctl.centerImage('vector-features-roadmap-8.png' ) }}
+{% ImagePlace src="vector-features-roadmap-8.png", justify='center' %}
+{% endImagePlace %}
 
 Yeah, kinda. It'll work until you see those features intersecting each other and then it looks weird. This happens a lot with aviation symbols.
 

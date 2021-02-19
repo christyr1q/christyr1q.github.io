@@ -7,8 +7,6 @@ tags: ["whirlyglobe"]
 
 ---
 
-{% import 'macros/imgctl.njk' as imgctl with context %}
-
 When people think of us, most think of WhirlyGlobe. It's the iconic interface in weather apps like [DarkSky](https://darksky.net/app) and tons of aviation apps you'd only know if you're a pilot.
 
 But did you know we also make a good 2D slippy map? That's Maply and it's completely open source.
@@ -21,7 +19,8 @@ Vector Tiles and Mapbox Style Sheets are a potent combo and they've won the geos
 
 Maply has supported Vector Tiles for years, but the Mapbox Style Sheet support lagged.... until this year.
 
-{{ imgctl.centerImage('vectortiles.jpg', caption = 'MapTiler Streets' ) }}
+{% ImagePlace src="vectortiles.jpg", caption = 'MapTiler Streets', justify='center' %}
+{% endImagePlace %}
 
 With the recent move to a unified code base we've got one single Mapbox Style Sheet implementation for iOS and Android.... and wherever else we port to. On iOS we upgraded our shaders to react to zoom level changes and it looks fantastic.
 
