@@ -22,12 +22,6 @@
     body {
         font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,helvetica,Arial,sans-serif;
     }
-
-    .prose {
-        img {
-            @apply mt-0 mb-0;
-        }
-    }
 }
 
 @layer utilities {

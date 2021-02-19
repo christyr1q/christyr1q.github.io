@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
@@ -29,7 +31,15 @@ async function imageShortcode(src, url, alt, caption, sizes) {
 }
 
 async function imagePlaceShortcode(content, args) {
-  let metadata = await Image(`src/assets/img/${args.src}`, {
+  var fName = `src/assets/img/${args.src}`
+  if (!fs.existsSync(fName)) {
+    fName = `src/posts/img/${args.src}`
+    if (!fs.existsSync(fName)) {
+      fNAme = args.src;
+    }
+  }
+
+  let metadata = await Image(fName, {
     widths: [16,32,75,150,300,600,1200,null],
     formats: ["jpeg", "webp"],
     urlPath: `${this.page.url}/../assets/img/`,
@@ -39,8 +49,12 @@ async function imagePlaceShortcode(content, args) {
   let jpegs = metadata["jpeg"];
   let maxWidth = jpegs[jpegs.length-1].width;
 
+  var altTag = args.alt
+  if (!altTag) {
+    altTag = ''
+  }
   let imageAttributes = {
-    alt: args.alt,
+    alt: altTag,
     sizes: `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`,
     loading: "lazy",
     decoding: "async",
