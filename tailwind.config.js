@@ -38,6 +38,14 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            'img': {
+              'margin-top': '0',
+              'margin-bottom': '0'
+            },
+            'figure': {
+              'margin-top': '0',
+              'margin-bottom': '0'
+            },
             'h1': {
               fontWeight: '700'
             },

@@ -4,23 +4,82 @@ const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
 
-async function imageShortcode(src, alt, sizes) {
+async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
-    widths: [16,32,75,150,300,600,1200],
+    widths: [16,32,75,150,300,600,1200,null],
     formats: ["jpeg", "webp"],
     urlPath: "assets/img/",
     outputDir: "./dist/assets/img/"
   });
 
-  let imageAttributes = {
+  let jpegs = metadata["jpeg"];
+  let maxWidth = jpegs[jpegs.length-1].width;
+
+  var imageAttributes = {
     alt,
-    sizes: '(min-width: 1024px) 1024px, 100vw',
+    sizes: `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`,
     loading: "lazy",
-    decoding: "async",
+    decoding: "async"
   };
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes)
+  const img = Image.generateHTML(metadata, imageAttributes)
+
+  return img;
+}
+
+async function imagePlaceShortcode(content, args) {
+  let metadata = await Image(`src/assets/img/${args.src}`, {
+    widths: [16,32,75,150,300,600,1200,null],
+    formats: ["jpeg", "webp"],
+    urlPath: `${this.page.url}/../assets/img/`,
+    outputDir: "./dist/assets/img/"
+  });
+
+  let jpegs = metadata["jpeg"];
+  let maxWidth = jpegs[jpegs.length-1].width;
+
+  let imageAttributes = {
+    alt: args.alt,
+    sizes: `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`,
+    loading: "lazy",
+    decoding: "async",
+    class: "mt-0 mb-0 ml-0 mr-0 rounded-lg"
+  };
+
+  const img = Image.generateHTML(metadata, imageAttributes)
+  var captionText = ''
+  // if (args.caption != '') {
+  //   captionText = `
+  //   <figcaption>
+  //   <p class="text-center">
+  //   ${caption}
+  //   </p>
+  //   </figcaption>`
+  // }
+
+  var floatEntry = "";
+  if (args.justify == 'left') {
+    floatEntry = "float-left"
+  }
+
+  let ret = 
+  `<div class="flex mt-0 mb-0 mr-4 md:flex-shrink-0 ${floatEntry}">
+
+  <figure class="shadow-lg rounded-lg">
+  <a href="${args.url}" target="_blank" rel="noopener noreferrer">
+  ${img}
+  </a>
+
+  ${captionText}
+  </figure>
+
+  </div>
+  <div class="prose">
+  ${content}
+  </div>`;
+
+  return ret
 }
 
 module.exports = (config) => {
@@ -86,6 +145,10 @@ module.exports = (config) => {
   config.addNunjucksAsyncShortcode("image", imageShortcode);
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
+
+  config.addPairedNunjucksAsyncShortcode("ImagePlace", imagePlaceShortcode);
+  config.addPairedLiquidShortcode("ImagePlace", imagePlaceShortcode);
+  config.addJavaScriptFunction("ImagePlace", imagePlaceShortcode);
 
   return {
     dir: {
