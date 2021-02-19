@@ -22,11 +22,11 @@ I’m going to try to put together a small group of WhirlyGlobe-Maply users to s
 
 Elevation loading was something of a hack in the toolkit. To understand why, we have to look at the way we loaded a tile’s worth of data:
 
-- Can we see enough of this tile to load it?
-- Request the imagery & wait for it to return
-- Request the elevation & wait for it to return
-- Build the geometry
-- Slap them all together
+    Can we see enough of this tile to load it?
+    Request the imagery & wait for it to return
+    Request the elevation & wait for it to return
+    Build the geometry
+    Slap them all together
 
 The biggest problem was loading time. The visuals would get super chunky as users waited for things to load. And it was all serial. Wait for imagery, then wait for elevation. Not great.
 

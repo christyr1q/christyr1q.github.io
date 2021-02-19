@@ -13,7 +13,7 @@ At mousebird consulting, we're mostly known for our open source work.  We make o
 
 WhirlyGlobe-Maply is a geospatial display SDK for iPhone, iPad, and Android devices.  We're proud to offer this amazing globe and map toolkit as open source.
 
-You'll find WhirlyGlobe-Maply in a wide variety of apps, from weather to map to civil aviation. It's big and functional, but friendly, with a nice selection of [tutorials]("http://mousebird.github.io/WhirlyGlobe/tutorial/getting_started.html) and a comfortable native API on each platform.
+You'll find WhirlyGlobe-Maply in a wide variety of apps, from weather to map to civil aviation. It's big and functional, but friendly, with a nice selection of [tutorials](https://mousebird.github.io/WhirlyGlobe/tutorial/) and a comfortable native API on each platform.
 
 {% endImagePlace %}
 

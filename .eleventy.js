@@ -35,7 +35,7 @@ async function imagePlaceShortcode(content, args) {
   if (!fs.existsSync(fName)) {
     fName = `src/posts/img/${args.src}`
     if (!fs.existsSync(fName)) {
-      fNAme = args.src;
+      fName = args.src;
     }
   }
 
@@ -63,14 +63,9 @@ async function imagePlaceShortcode(content, args) {
 
   const img = Image.generateHTML(metadata, imageAttributes)
   var captionText = ''
-  // if (args.caption != '') {
-  //   captionText = `
-  //   <figcaption>
-  //   <p class="text-center">
-  //   ${caption}
-  //   </p>
-  //   </figcaption>`
-  // }
+  if (args.caption) {
+    captionText = '<figcaption class="text-center mx-2"> ' + args.caption + ' </figcaption>'
+  }
 
   var floatEntry = "";
   if (args.justify == 'left') {
@@ -86,12 +81,12 @@ async function imagePlaceShortcode(content, args) {
   </a>
 
   ${captionText}
+
   </figure>
 
   </div>
-  <div class="prose">
   ${content}
-  </div>`;
+  <div style="clear:both;"></div>`;
 
   return ret
 }
