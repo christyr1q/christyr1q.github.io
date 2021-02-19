@@ -3,7 +3,9 @@ title: mousebird consulting inc
 layout: home
 ---
 
-![Globe and map](assets/img/mainbanner.jpg)
+{% image "src/assets/img/mainbanner.jpg", "test" %}
+
+<!-- ![Globe and map](assets/img/mainbanner.jpg) -->
 
 ### About Us
 

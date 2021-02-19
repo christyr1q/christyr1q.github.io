@@ -1,7 +1,27 @@
 const pluginTailwind = require('eleventy-plugin-tailwindcss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
+
+async function imageShortcode(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [16,32,75,150,300,600,1200],
+    formats: ["jpeg", "webp"],
+    urlPath: "assets/img/",
+    outputDir: "./dist/assets/img/"
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes: '(min-width: 1024px) 1024px, 100vw',
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes)
+}
 
 module.exports = (config) => {
   config.addPlugin(pluginTailwind, {
@@ -39,7 +59,7 @@ module.exports = (config) => {
     }
   };
   let markdownLib = markdownIt(markdownItOptions).use(mila, milaOptions);
-  config.setLibrary("md", markdownLib);
+  config.setLibrary("md", markdownLib); 
   
   config.setDataDeepMerge(true);
 
@@ -62,6 +82,10 @@ module.exports = (config) => {
   config.addCollection('tagList', require('./lib/collections/tagList'));
   config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
   config.addCollection('pagedPostsByTag', require('./lib/collections/pagedPostsByTag'));
+
+  config.addNunjucksAsyncShortcode("image", imageShortcode);
+  config.addLiquidShortcode("image", imageShortcode);
+  config.addJavaScriptFunction("image", imageShortcode);
 
   return {
     dir: {

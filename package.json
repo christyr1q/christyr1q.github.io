@@ -20,6 +20,7 @@
 		"terser": "^4.8.0"
 	},
 	"dependencies": {
+		"@11ty/eleventy-img": "^0.8.0",
 		"markdown-it-link-attributes": "^3.0.0"
 	}
 }
