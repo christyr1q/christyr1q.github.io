@@ -10,7 +10,7 @@ tags: whirlyglobe
 
 Right now WhirlyGlobe supports a single resolution of imagery for the globe.  You chop it up, feed it to the system and it uses that.  I've always planned on supporting image pyramids.
 
-There are lots of ways to represent an image pyramid.  The one I settled on, [for various reasons](http://mousebirdconsulting.blogspot.com/2011/11/image-pyramid-support-mapbox-tiles.html), is MBTiles.  It's pretty simple and they've got a decent iOS presence.
+There are lots of ways to represent an image pyramid.  The one I settled on, [for various reasons](https://mousebirdconsulting.blogspot.com/2011/11/image-pyramid-support-mapbox-tiles.html), is MBTiles.  It's pretty simple and they've got a decent iOS presence.
 
 
 ## MapBox Tiles - First Pass
@@ -23,7 +23,7 @@ MBTiles are stored in a Spherical Mercator coordinate system (designed to annoy 
 
 Just to make that point, here's another pretty picture showing how a vector layer lines up with the underlying image.  It matches perfectly.  A little too perfectly actually, which means we're using exactly the same data set.  Natural Earth 10m admin 0 represent!
 
-| [![img](http://1.bp.blogspot.com/-rbVFRWNoBFU/Tyto_7pT-nI/AAAAAAAAACw/DDCnCSkl1jM/s320/Vectors+Overlaid.png)](http://1.bp.blogspot.com/-rbVFRWNoBFU/Tyto_7pT-nI/AAAAAAAAACw/DDCnCSkl1jM/s1600/Vectors+Overlaid.png) |
+| [![img](https://1.bp.blogspot.com/-rbVFRWNoBFU/Tyto_7pT-nI/AAAAAAAAACw/DDCnCSkl1jM/s320/Vectors+Overlaid.png)](https://1.bp.blogspot.com/-rbVFRWNoBFU/Tyto_7pT-nI/AAAAAAAAACw/DDCnCSkl1jM/s1600/Vectors+Overlaid.png) |
 | ------------------------------------------------------------ |
 | MBTiles Layer + 10m vector countries                         |
 
@@ -52,6 +52,6 @@ If you need this functionality sooner and have money, let's talk.  This could mo
 
 Oh, and here's another pretty picture.
 
-| [![img](http://2.bp.blogspot.com/-X4s_CY8m82k/Tyt0r45p2yI/AAAAAAAAAC4/OaF0nlRpIo0/s320/Lofted+Polys.png)](http://2.bp.blogspot.com/-X4s_CY8m82k/Tyt0r45p2yI/AAAAAAAAAC4/OaF0nlRpIo0/s1600/Lofted+Polys.png) |
+| [![img](https://2.bp.blogspot.com/-X4s_CY8m82k/Tyt0r45p2yI/AAAAAAAAAC4/OaF0nlRpIo0/s320/Lofted+Polys.png)](https://2.bp.blogspot.com/-X4s_CY8m82k/Tyt0r45p2yI/AAAAAAAAAC4/OaF0nlRpIo0/s1600/Lofted+Polys.png) |
 | ------------------------------------------------------------ |
 | Geography Class + Lofted Polys                               |

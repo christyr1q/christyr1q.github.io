@@ -17,11 +17,11 @@ I did some work for a client on MapTiler and Mapbox map sources. You get to bene
 
 ### MapTiler & Mapbox
 
-We were focused on [Map Tiler](http://maptiler.com/) primarily, so those work best. You can find examples for their Basic, Hybrid Satellite, and Streets styles in the AutoTester app.
+We were focused on [Map Tiler](https://maptiler.com/) primarily, so those work best. You can find examples for their Basic, Hybrid Satellite, and Streets styles in the AutoTester app.
 
 {{ imgctl.centerImage('mapbox-style-support-2.jpeg', caption = 'MapTiler Streets' ) }}
 
-As for [Mapbox](http://mapbox.com/), we were trying out their Satellite offerings so you'll see examples for Satellite and Hybrid Satellite. Streets will probably kind of work, but it wasn't my priority.
+As for [Mapbox](https://mapbox.com/), we were trying out their Satellite offerings so you'll see examples for Satellite and Hybrid Satellite. Streets will probably kind of work, but it wasn't my priority.
 
 {{ imgctl.centerImage('mapbox-style-support-3.jpeg', caption = 'Mapbox Satellite Streets' ) }}
 

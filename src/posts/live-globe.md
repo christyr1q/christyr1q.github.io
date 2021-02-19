@@ -10,7 +10,7 @@ date: 2012-03-01
 
 
 
-I'm pleased to announce the release of [Live Globe 1.0](http://itunes.apple.com/us/app/live-globe/id501997258?mt=8) on the app store.  This app really pushes WhirlyGlobe to its limits in some interesting ways.
+I'm pleased to announce the release of [Live Globe 1.0](https://itunes.apple.com/us/app/live-globe/id501997258?mt=8) on the app store.  This app really pushes WhirlyGlobe to its limits in some interesting ways.
 
 Live Globe is actually the original WhirlyGlobe app and the publisher, Hyperwords, is my first WhirlyGlobe client.  There's some interesting history there, but first a video.
 
@@ -32,7 +32,7 @@ After another interlude, I ended up writing the non-globe features as well.  And
 
 Features
 
-If you're at all interested in this stuff, you should just go buy the [thing](http://itunes.apple.com/us/app/live-globe/id501997258?mt=8) and check it out.  No whining about the $3.99 price tag.  Nice things cost a little bit of money.
+If you're at all interested in this stuff, you should just go buy the [thing](https://itunes.apple.com/us/app/live-globe/id501997258?mt=8) and check it out.  No whining about the $3.99 price tag.  Nice things cost a little bit of money.
 
 There are a few unique things in Live Globe.
 
@@ -56,4 +56,4 @@ Live Globe is cool and I wish Hyperwords the best, but I don't have a stake in i
 
 So Buy it Already
 
-Hyperwords has a long list of features planned for future versions.  But someone has to, you know, buy the thing.  This was the app I used to develop WhirlyGlobe and it was invaluable to me for that.  If you're using WhirlyGlobe or even think it's cool, you should go [buy this app](http://itunes.apple.com/us/app/live-globe/id501997258?mt=8).
+Hyperwords has a long list of features planned for future versions.  But someone has to, you know, buy the thing.  This was the app I used to develop WhirlyGlobe and it was invaluable to me for that.  If you're using WhirlyGlobe or even think it's cool, you should go [buy this app](https://itunes.apple.com/us/app/live-globe/id501997258?mt=8).

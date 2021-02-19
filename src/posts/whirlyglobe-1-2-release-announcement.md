@@ -9,7 +9,7 @@ tags:
 --- 
 
 
-### [WhirlyGlobe 1.2 - Release Announcement](http://mousebirdconsulting.blogspot.com/2012/01/whirlyglobe-12-release-announcement.html)
+### [WhirlyGlobe 1.2 - Release Announcement](https://mousebirdconsulting.blogspot.com/2012/01/whirlyglobe-12-release-announcement.html)
 
 I'm pleased to announce WhirlyGlobe 1.2.  This release has been several months in coming and represents a big step for some of the more interactive functionality in WhirlyGlobe.
 
@@ -26,7 +26,7 @@ In WhirlyGlobe 1.0 we had text labels.  They work great, but sometimes people ju
 
 
 
-[![img](http://4.bp.blogspot.com/-mriaS4m_Kro/Twd85aCVVXI/AAAAAAAAACI/7sOVtD1rweo/s1600/markers.png)](http://4.bp.blogspot.com/-mriaS4m_Kro/Twd85aCVVXI/AAAAAAAAACI/7sOVtD1rweo/s1600/markers.png)
+[![img](https://4.bp.blogspot.com/-mriaS4m_Kro/Twd85aCVVXI/AAAAAAAAACI/7sOVtD1rweo/s1600/markers.png)](https://4.bp.blogspot.com/-mriaS4m_Kro/Twd85aCVVXI/AAAAAAAAACI/7sOVtD1rweo/s1600/markers.png)
 
 
 
@@ -39,7 +39,7 @@ This feature was just plain fun.  You give WhirlyGlobe a location for the emitte
 
 
 
-[![img](http://4.bp.blogspot.com/-V5n_Vj1Zs9E/Twd9EYvulZI/AAAAAAAAACY/OF8DBi3c5V4/s1600/particles.png)](http://4.bp.blogspot.com/-V5n_Vj1Zs9E/Twd9EYvulZI/AAAAAAAAACY/OF8DBi3c5V4/s1600/particles.png)
+[![img](https://4.bp.blogspot.com/-V5n_Vj1Zs9E/Twd9EYvulZI/AAAAAAAAACY/OF8DBi3c5V4/s1600/particles.png)](https://4.bp.blogspot.com/-V5n_Vj1Zs9E/Twd9EYvulZI/AAAAAAAAACY/OF8DBi3c5V4/s1600/particles.png)
 
 
 
@@ -52,7 +52,7 @@ We had lofted polygons in the WhirlyGraph app, but not as a regular feature in t
 
 
 
-[![img](http://4.bp.blogspot.com/-S85pGVcS-NE/Twd9CEgNs4I/AAAAAAAAACQ/WhQTXvx9T1g/s320/loft.png)](http://4.bp.blogspot.com/-S85pGVcS-NE/Twd9CEgNs4I/AAAAAAAAACQ/WhQTXvx9T1g/s1600/loft.png)
+[![img](https://4.bp.blogspot.com/-S85pGVcS-NE/Twd9CEgNs4I/AAAAAAAAACQ/WhQTXvx9T1g/s320/loft.png)](https://4.bp.blogspot.com/-S85pGVcS-NE/Twd9CEgNs4I/AAAAAAAAACQ/WhQTXvx9T1g/s1600/loft.png)
 
 
 
@@ -76,7 +76,7 @@ Labels are the most obvious problem:  How big is a label in geographic coordinat
 
 
 
-[![img](http://1.bp.blogspot.com/-0swgA8qf520/Twd9GYLYQII/AAAAAAAAACg/RbjZw2XLehw/s320/select.png)](http://1.bp.blogspot.com/-0swgA8qf520/Twd9GYLYQII/AAAAAAAAACg/RbjZw2XLehw/s1600/select.png)
+[![img](https://1.bp.blogspot.com/-0swgA8qf520/Twd9GYLYQII/AAAAAAAAACg/RbjZw2XLehw/s320/select.png)](https://1.bp.blogspot.com/-0swgA8qf520/Twd9GYLYQII/AAAAAAAAACg/RbjZw2XLehw/s1600/select.png)
 
 
 
@@ -125,6 +125,6 @@ You can find WhirlyGlobeTester in the source tree or the starter pack.
 
 ## Where to Get It
 
-You can grab the source tree from the [google code](http://code.google.com/p/whirlyglobe/) page.  The 1.2 release is tagged.
+You can grab the source tree from the [google code](https://code.google.com/p/whirlyglobe/) page.  The 1.2 release is tagged.
 
-If you just want the framework, check out the [downloads page](http://code.google.com/p/whirlyglobe/downloads/list).  There's also a starter pack which contains all the test apps and 3rd party libraries you need to compile.
+If you just want the framework, check out the [downloads page](https://code.google.com/p/whirlyglobe/downloads/list).  There's also a starter pack which contains all the test apps and 3rd party libraries you need to compile.

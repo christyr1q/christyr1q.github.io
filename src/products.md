@@ -9,7 +9,7 @@ At mousebird consulting, we're mostly known for our open source work.  We make o
 
 #### WhirlyGlobe-Maply Toolkit
 
-{% ImagePlace src="aa_crop.jpg", url="http://mousebird.github.io/WhirlyGlobe", alt="WhirlyGlobe-Maply Toolkit", justify='left' %}
+{% ImagePlace src="aa_crop.jpg", url="https://mousebird.github.io/WhirlyGlobe", alt="WhirlyGlobe-Maply Toolkit", justify='left' %}
 
 WhirlyGlobe-Maply is a geospatial display SDK for iPhone, iPad, and Android devices.  We're proud to offer this amazing globe and map toolkit as open source.
 
