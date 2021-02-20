@@ -88,7 +88,7 @@ async function imagePlaceShortcode(content, args) {
     if (args.justify == 'left') {
       floatEntry = "float-left"
     } else if (args.justify == 'right') {
-      floatEntry = "right-right"
+      floatEntry = "float-right"
     }
   
   let ret = 
