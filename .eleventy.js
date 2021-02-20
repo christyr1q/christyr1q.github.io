@@ -84,28 +84,24 @@ async function imagePlaceShortcode(content, args) {
   if (args.justify == 'header') {
     return img
   } else {
-    var floatEntry = "";
+    var floatEntry = " ";
     if (args.justify == 'left') {
       floatEntry = "float-left"
     } else if (args.justify == 'right') {
       floatEntry = "right-right"
     }
   
-    let ret = 
-    `<div class="flex mt-0 mb-0 mr-4 md:flex-shrink-0 ${floatEntry}">
-
-    <figure class="shadow-lg rounded-lg">
-    <a href="${args.url}" target="_blank" rel="noopener noreferrer">
-    ${img}
-    </a>
-
-    ${captionText}
-
-    </figure>
-
-    </div>
-    ${content}
-    <div style="clear:both;"></div>`;
+  let ret = 
+  `<div class="flex mt-0 mb-0 mr-4 md:flex-shrink-0 ${floatEntry}">
+  <figure class="shadow-lg rounded-lg">
+  <a href="${args.url}" target="_blank" rel="noopener noreferrer">
+  ${img}
+  </a>
+  ${captionText}
+  </figure>
+  </div>
+  ${content}
+  <div style="clear:both;"></div>`;
 
     return ret
   }
