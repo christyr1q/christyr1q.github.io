@@ -35,14 +35,23 @@ async function imagePlaceShortcode(content, args) {
   if (!fs.existsSync(fName)) {
     fName = `src/posts/img/${args.src}`
     if (!fs.existsSync(fName)) {
-      fName = args.src;
+      if (args.src.search("assets")) {
+        fName = `src/${args.src}`
+      } else {
+        fName = args.src;
+      }
     }
+  }
+
+  if (!fs.existsSync(fName)) {
+    console.log(`Failed to find image ${args.src}.  Skipping image tag.`)
+    return ""
   }
 
   let metadata = await Image(fName, {
     widths: [16,32,75,150,300,600,1200,null],
     formats: ["jpeg", "webp"],
-    urlPath: `${this.page.url}/../assets/img/`,
+    urlPath: `/assets/img/`,
     outputDir: "./dist/assets/img/"
   });
 
@@ -53,12 +62,16 @@ async function imagePlaceShortcode(content, args) {
   if (!altTag) {
     altTag = ''
   }
+  var imgClass = "mt-0 mb-0 ml-0 mr-0 rounded-lg"
+  if (args.justify == 'header') {
+    imgClass = "w-full max-w-2xl mx-auto"
+  }
   let imageAttributes = {
     alt: altTag,
     sizes: `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`,
     loading: "lazy",
     decoding: "async",
-    class: "mt-0 mb-0 ml-0 mr-0 rounded-lg"
+    class: imgClass
   };
 
   const img = Image.generateHTML(metadata, imageAttributes)
@@ -67,28 +80,35 @@ async function imagePlaceShortcode(content, args) {
     captionText = '<figcaption class="text-center mx-2"> ' + args.caption + ' </figcaption>'
   }
 
-  var floatEntry = "";
-  if (args.justify == 'left') {
-    floatEntry = "float-left"
+  // Special mode 
+  if (args.justify == 'header') {
+    return img
+  } else {
+    var floatEntry = "";
+    if (args.justify == 'left') {
+      floatEntry = "float-left"
+    } else if (args.justify == 'right') {
+      floatEntry = "right-right"
+    }
+  
+    let ret = 
+    `<div class="flex mt-0 mb-0 mr-4 md:flex-shrink-0 ${floatEntry}">
+
+    <figure class="shadow-lg rounded-lg">
+    <a href="${args.url}" target="_blank" rel="noopener noreferrer">
+    ${img}
+    </a>
+
+    ${captionText}
+
+    </figure>
+
+    </div>
+    ${content}
+    <div style="clear:both;"></div>`;
+
+    return ret
   }
-
-  let ret = 
-  `<div class="flex mt-0 mb-0 mr-4 md:flex-shrink-0 ${floatEntry}">
-
-  <figure class="shadow-lg rounded-lg">
-  <a href="${args.url}" target="_blank" rel="noopener noreferrer">
-  ${img}
-  </a>
-
-  ${captionText}
-
-  </figure>
-
-  </div>
-  ${content}
-  <div style="clear:both;"></div>`;
-
-  return ret
 }
 
 module.exports = (config) => {
