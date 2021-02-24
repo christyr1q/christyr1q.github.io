@@ -3,7 +3,7 @@ layout: post
 title: "Location Tracking for Android"
 date: 2021-02-22
 thumb: "index_location-tracking-android.png"
-tags: android, whirlyglobe, maply
+tags: [android, whirlyglobe, maply]
 
 --- 
 
