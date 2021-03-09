@@ -5,6 +5,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
@@ -132,6 +133,7 @@ module.exports = (config) => {
       // Added in 3.0.4, change the separator between lines (you may want "\n")
       // lineSeparator: "<br>",
     });
+  config.addPlugin(pluginRss);
 
   let markdownItOptions = {
     html: true

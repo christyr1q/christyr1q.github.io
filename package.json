@@ -10,6 +10,7 @@
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^0.11.1",
+		"@11ty/eleventy-plugin-rss": "^1.1.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
 		"@tailwindcss/typography": "^0.3.1",
 		"cross-env": "^7.0.3",
@@ -21,6 +22,9 @@
 	},
 	"dependencies": {
 		"@11ty/eleventy-img": "^0.8.0",
-		"markdown-it-link-attributes": "^3.0.0"
+		"bufferutil": "^4.0.3",
+		"canvas": "^2.7.0",
+		"markdown-it-link-attributes": "^3.0.0",
+		"utf-8-validate": "^5.0.4"
 	}
 }
