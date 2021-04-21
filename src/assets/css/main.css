@@ -35,4 +35,13 @@
         clip: rect(1px, 1px, 1px, 1px);
         clip-path: inset(1px);
     }
+
+    .h-64px {
+        height: 64px;
+    }
+
+    .h-80px {
+        height: 80px;
+    }
+
 }
