@@ -51,6 +51,6 @@ This app is used by utilities to manage their activities in the field.  It pairs
 
 {% ImagePlace src="icon_saildrone.png", url="https://www.saildrone.com/forecast", alt="Saildrone Forecast", justify='left' %}
 
-Saildrone Forecast is a gorgeous weather app we spent a significant amount of time developing and updating.  It implements a variety of complex weather graphics, such as particles for wind, mixing of data in disparate coordinate systems, and real itme contours for pressure.
+Saildrone Forecast is a gorgeous weather app we spent a significant amount of time developing and updating.  It implements a variety of complex weather graphics, such as particles for wind, mixing of data in disparate coordinate systems, and real time contours for pressure.
 
 {% endImagePlace %}
