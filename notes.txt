@@ -1,6 +1,0 @@
-Notes for the web site
-----
-
-Image Size for the header image in each blog
-  960 x 500
-  

@@ -9,18 +9,34 @@
         }
     }
 
+    @font-face {
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: local("IBM Plex Sans"), local("IBMPlexSans"), url("/assets/fonts/IBMPlexSans-Regular.ttf") format("ttf")
+    }
+    @font-face {
+        font-family: "IBM Plex Sans";
+        font-style: italic;
+        font-weight: 400;
+        src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"), url("/assets/fonts/IBMPlexSans-Italc.ttf") format("ttf")
+    }
+    @font-face {
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 600;
+        src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url("/assets/fonts/IBMPlexSans-SemiBold.ttf") format("ttf")
+    }
+
     h2, h3, h4, h5, h6 {
-        font-family:    Museo-500;
         padding-top:    1em;
         line-height:    2.4em;
         @apply border-b-2;
     }
     p {
-        font-family:   Roboto;
         @apply text-lg;
     }
     body {
-        font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,helvetica,Arial,sans-serif;
     }
 }
 

@@ -13,6 +13,7 @@ module.exports = {
       sm: '576px',
       md: '768px',
       lg: '1024px',
+      mcw: '1152px',
       xl: '1280px'
     },
     colors: {
@@ -20,7 +21,6 @@ module.exports = {
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
-      mousebirdBlue: '#00557e',
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -34,7 +34,20 @@ module.exports = {
       },
       teal: colors.teal
     },
-    extend: {
+    fontFamily: {
+      'sans': ['IBM Plex Sans', 'ui-sans-serif', 'system-ui'],
+      'serif': ['ui-serif', 'Georgia'],
+      'mono': ['ui-monospace', 'SFMono-Regular'],
+      'display': ['Oswald'],
+      'body': ['Open Sans']
+    },
+   extend: {
+      colors: {
+        'mousebirdDarkGray': '#231f20',
+        'mousebirdBlue': '#00608e',
+        'mousebirdLightBlue': '#80afc6',
+        'mousebirdGreen': '#46a948'  
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
