@@ -1,20 +1,38 @@
 <header id="header" class="bg-mousebirdBlue h-20 z-50 fixed w-full top-0 transition-all transform ease-in-out duration-300">
-    <div class="flex max-w-screen-mcw mx-auto h-full w-full">
+    <div id="menu-top" class="flex max-w-screen-mcw mx-auto h-full w-full">
         <img class="h-14 mx-6 my-6" src="assets/img/header_logo@3x.png" 
                                     srcset="assets/img/header_logo@1x.png, assets/img/header_logo@2x.png 2x, assets/img/header_logo@3x.png 3x">
         <div class="flex-grow"> </div>
-        <nav id="menu" class="mx-6 mr-6 items-center w-full sm:w-auto sm:flex sm:order-none hidden">
+        <nav id="menu-horiz" class="mx-6 mr-6 items-center w-full sm:w-auto sm:flex sm:order-none invisible sm:visible">
             {% for item in menu %}
             <a href="{{ item.url | url }}" {% if item.newTab %}target="_blank" rel="noopener" {% endif %}
-                class="block font-sans font-medium text-white hover:text-mousebirdGreen duration-300 text-base m-6 lg:m-8 lg:text-lg xl:m-10">{{ item.label }}</a>
+                class="bg-mousebirdBlue block font-sans font-medium text-white hover:text-mousebirdGreen duration-300 transition-none sm:transition-all text-base m-6 lg:m-8 lg:text-lg xl:m-10">{{ item.label }}</a>
             {% endfor %}
         </nav>
         <div id="menu-toggle" class="self-center sm:hidden cursor-pointer mr-6">
+            <div id="menu-hamburger">
+                <svg  width="24" height="16" viewBox="0 0 24 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line stroke="white" x1="0" y1="8" x2="24" y2="8"></line>
+                    <line stroke="white" x1="0" y1="1" x2="24" y2="1"></line>
+                    <line stroke="white" x1="0" y1="15" x2="24" y2="15"></line>
+                </svg>
+            </div>
+            <div id="menu-x" class="hidden">
             <svg width="24" height="16" viewBox="0 0 24 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line stroke="white" x1="0" y1="8" x2="24" y2="8"></line>
-                <line stroke="white" x1="0" y1="1" x2="24" y2="1"></line>
-                <line stroke="white" x1="0" y1="15" x2="24" y2="15"></line>
-            </svg>        
+                <line stroke="white" x1="0" y1="0" x2="15" y2="15"></line>
+                <line stroke="white" x1="0" y1="15" x2="15" y2="0"></line>
+            </svg>
+            </div>        
         </div>
     </div>
+    <nav id="menu-vert" class="w-full hidden sm:invisible">
+        <div class="bg-mousebirdBlue flex h-full w-full">
+            <div class="ml-16 grid-col-1 my-6 space-y-5">
+                {% for item in menu %}
+                <a href="{{ item.url | url }}" {% if item.newTab %}target="_blank" rel="noopener" {% endif %}
+                    class="block font-sans font-medium text-white hover:text-mousebirdGreen duration-300 sm:transition-none text-base lg:m-8 lg:text-lg xl:m-10">{{ item.label }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
 </header>

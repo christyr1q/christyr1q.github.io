@@ -1,18 +1,18 @@
 [
     {
         "label": "Products",
-        "url": "/products"
+        "url": "#products"
     },
     {
         "label": "Apps",
-        "url": "/apps"
+        "url": "#apps"
     },
     {
         "label": "Blog",
         "url": "/blog.html"
     },
     {
-        "label": "Site",
-        "url": "/about"
+        "label": "Contact",
+        "url": "#contact"
     }
 ]
