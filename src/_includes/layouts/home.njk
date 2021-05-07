@@ -1,9 +1,114 @@
 ---
-layout: default
 ---
 
-<article class="mx-auto my-4 mb-16">
-    <div id="content" class="prose text-gray-800 max-w-none mx-8 break-words">
-        {{ content | safe }}
-    </div>
+{%- set metaTitle -%}
+    {%- if not title -%}{{ site.title }} - {{ site.description | safe }}
+    {%- else -%}{{ title | safe }} | {{ site.title }}
+    {%- endif -%}
+{%- endset -%}
+{%- set metaDesc -%}
+    {%- if not description -%}{{ site.description | safe }}
+    {%- else -%}{{ description | safe }}
+    {%- endif -%}
+{%- endset -%}
+{%- set metaKeywords -%}
+    {%- if tags -%}{%- for tag in tags -%}{{ tag }},{%- endfor -%}{%- endif -%}
+    {%- if site.keywords -%}
+        {%- for keyword in site.keywords -%}
+            {{ keyword }}{%- if not loop.last %},{% endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endset -%}
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ metaTitle }}</title>
+    <meta name="title" content="{{ metaTitle }}">
+    <meta name="description" content="{{ metaDesc }}">
+    <meta name="keywords" content="{{ metaKeywords }}">
+    <meta name="author" content="{{ author.name }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ site.url | url }}{{ page.url }}">
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/img/favicon.png' | url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | url }}">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+</head>	
+
+<body class="h-screen white">
+{% include "partials/header.njk" %}
+
+<main class="flex flex-col max-w-screen-mcw mx-auto">
+
+<div class="w-full h-20"> </div>
+
+<article class="mx-6">
+
+<div id="intro">
+<h1>Geospatial data display for mobile devices</h1>
+<p>
+And the back end to support it. That’s iOS, Android and the active services to support them.
+</p>
+<p>
+Our work can be found in a wide variety of weather, aviation, education and miscellaneous apps. 
+We’ve been warming the pockets of millions of users worldwide for at least a decade.
+</p>
+<p>
+As you might imagine, this is tricky stuff. We’re skilled in the ways of OpenGL ES, Metal, 
+threading, networking, geospatial data processing, and user interfaces. Our stuff is known for 
+being fast and responsive on mobile devices and simple to run on the back end.
+</p>
+</div>
+
+<div id="products">
+<h1>Products</h1>
+<h2>WhirlyGlobe-Maply Toolkit</h2>
+<p>WhirlyGlobe-Maply is a geospatial display SDK for iPhone, iPad, and Android devices. 
+We're proud to offer this amazing globe and map toolkit as open source.</p>
+<p>You'll find WhirlyGlobe-Maply in a wide variety of apps, from weather to map to civil 
+aviation. It’s big and functional, but friendly, with a nice selection of tutorials and a 
+comfortable native API on each platform.</p>
+<h2>WhirlyGlobe-Maply Support</h2>
+<p>WhirlyGlobe-Maply is open source, but we do offer a support contract. It's a simpler deal 
+than paying us by the hour and the contract is 50% less likely to annoy your lawyer.</p>
+<p>We offer both iOS and Android support contracts. You get quick response to your questions, 
+bug fixes and work arounds and input on the feature roadmap. Contact us for details.</p>
+</div>
+
+<div id="apps">
+<h1>Client Apps</h1>
+</div>
+
+<div id="news">
+<h1>News</h1>
+</div>
+
+<div id="contact">
+<h1>Get in touch.</h1>
+</div>
+
+<div id="details">
+<h1>Technical Details and Thanks</h1>
+<p>This site is built on 11ty and Tailwind CSS. Special thanks to Dafiul Haq for the 
+vredeburg template which we used as our starting point.<p>
+
+<p>We’ve retained the copyrights from the various sources and any extensions we've made are 
+subject to those same copyrights. However, the content of the site belongs to mousebird 
+consulting exclusively.<p>
+</div>
+
 </article>
+
+    </main>
+    {% include "partials/footer.njk" %}
+    <script src="{{ '/assets/js/bundle.js' | url }}"></script>
+</body>
