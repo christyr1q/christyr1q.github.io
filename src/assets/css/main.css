@@ -66,6 +66,12 @@
     .h1-main {
         @apply font-sans font-bold text-mousebirdDarkGray text-3xl sm:text-4xl xl:text-5xl
     }
+    .h2-main {
+        @apply font-sans font-semibold leading-tight text-center text-mousebirdDarkGray
+    }
+    .h3-main {
+        @apply font-sans font-semibold leading-snug text-center text-mousebirdDarkGray
+    }
     .subhead-main {
         @apply font-sans font-normal text-mousebirdDarkGray my-4 text-lg sm:text-xl xl:text-3xl
     }
@@ -74,6 +80,9 @@
     }
     .p-intro {
         @apply p-main text-center
+    }
+    .div-main {
+        @apply my-14 md:my-16 lg:my-18 xl:my-20
     }
     .btn-main {
         @apply pt-2 pr-5 pb-3 pl-5 rounded-full bg-mousebirdGreen border-0
