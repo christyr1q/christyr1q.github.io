@@ -61,3 +61,24 @@
     }
 
 }
+
+@layer components {
+    .h1-main {
+        @apply font-sans font-bold text-mousebirdDarkGray text-3xl sm:text-4xl xl:text-5xl
+    }
+    .subhead-main {
+        @apply font-sans font-normal text-mousebirdDarkGray my-4 text-lg sm:text-xl xl:text-3xl
+    }
+    .p-main {
+        @apply font-serif font-normal text-mousebirdDarkGray text-base lg:text-lg mt-4
+    }
+    .p-intro {
+        @apply p-main text-center
+    }
+    .btn-main {
+        @apply pt-2 pr-5 pb-3 pl-5 rounded-full bg-mousebirdGreen border-0
+    }
+    .btn-main-text {
+        @apply font-bold text-base lg:text-lg xl:text-xl text-white hover:text-mousebirdBlue duration-300
+    }
+}

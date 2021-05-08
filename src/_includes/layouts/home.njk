@@ -47,26 +47,52 @@
 <body class="h-screen white">
 {% include "partials/header.njk" %}
 
-<main class="flex flex-col max-w-screen-mcw mx-auto">
+<main>
 
 <div class="w-full h-20"> </div>
 
-<article class="mx-6">
+<article>
 
 <div id="intro">
-<h1>Geospatial data display for mobile devices</h1>
-<p>
-And the back end to support it. That’s iOS, Android and the active services to support them.
-</p>
-<p>
+
+<div class="flex flex-row">
+    <div class="mx-6 my-12 sm:self-center max-w-screen-mcw">
+    <h1 class="h1-main">Geospatial data display for mobile devices</h1>
+    <p class="subhead-main">
+    And the back end to support it. That’s iOS, Android and the active services to support them.
+    </p>
+    <button type="button" class="btn-main">
+        <p class="btn-main-text"> Contact Us<p>
+    </button>
+    </div>
+
+    <div class="flex-grow"> </div>
+
+    <img class="mr-0 h-80 lg:hidden my-12" 
+         style="filter: drop-shadow(0 6vw 6vw rgba(35, 31, 32, .9));"
+         src="assets/img/half_globe@632px.png" 
+         srcset="assets/img/half_globe@316px.png, assets/img/half_globe@632px.png 2x">
+
+    <img class="mr-0 h-80 hidden lg:flex my-12"
+         style="filter: drop-shadow(0 3vw 3vw rgba(35, 31, 32, .9));"
+         src="assets/img/whole_globe@632px.png" 
+         srcset="assets/img/whole_globe@632px.png, assets/img/whole_globe@1264px.png 2x">
+</div>
+
+<div class="sm:max-w-screen-md mx-auto">
+
+<p class="mx-6 p-intro">
 Our work can be found in a wide variety of weather, aviation, education and miscellaneous apps. 
 We’ve been warming the pockets of millions of users worldwide for at least a decade.
 </p>
-<p>
+<p class="mx-6 p-intro">
 As you might imagine, this is tricky stuff. We’re skilled in the ways of OpenGL ES, Metal, 
 threading, networking, geospatial data processing, and user interfaces. Our stuff is known for 
 being fast and responsive on mobile devices and simple to run on the back end.
 </p>
+
+</div>
+
 </div>
 
 <div id="products">
