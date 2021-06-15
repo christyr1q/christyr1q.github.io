@@ -84,7 +84,7 @@
         @apply font-sans font-semibold leading-snug text-center text-mousebirdBlue text-xl md:text-2xl xl:text-3xl
     }
     .div-main {
-        @apply py-14 md:py-16 lg:py-16 xl:py-20
+        @apply flex flex-col mx-auto max-w-screen-mcw py-14 md:py-16 lg:py-16 xl:py-20
     }
     .btn-main-text {
         @apply font-bold text-base lg:text-lg xl:text-xl text-white hover:text-mousebirdBlue duration-300
