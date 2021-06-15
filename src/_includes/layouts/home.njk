@@ -129,8 +129,27 @@
 
 </div>
 
-<div id="apps" class="div-main">
-<h1>Client Apps</h1>
+<div id="apps" class="div-main w-full px-4 md:px-10 xl:px-16">
+<h1 class="h1-main text-black text-center">Client Apps</h1>
+    <div class="grid grid-cols-1 mt-10">
+    {% for entry in apps %}
+    <div class="mt-6 sm:mt-0 sm:grid sm:grid-cols-2 sm:place-items-stretch gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
+        {% if loop.index0%2 > 0 %}
+            {% set firstEntry = "order-first" %}
+            {% set secondEntry = "order-last" %}
+        {% else %}
+            {% set firstEntry = "order-last" %}
+            {% set secondEntry = "order-first" %}
+        {% endif %}
+        <img src="assets/img/{{entry.img}}" class="{{firstEntry}}">
+        <div class="flex flex-col self-center {{secondEntry}}">
+            <h3 class="h3-main">{{entry.title}}</h2>
+            <p class="p-main">{{entry.text}}</p>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
 </div>
 
 <div id="news" class="div-main">

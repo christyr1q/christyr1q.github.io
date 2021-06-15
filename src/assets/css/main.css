@@ -31,7 +31,6 @@
     h2, h3, h4, h5, h6 {
         padding-top:    1em;
         line-height:    2.4em;
-        @apply border-b-2;
     }
     p {
         @apply text-lg;

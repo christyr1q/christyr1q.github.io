@@ -1,0 +1,38 @@
+[
+    {
+        "img": "nats_composite.png",
+        "url": "https://www.nats.aero/ae-home/",
+        "title": "NATS Airspace Explorer",
+        "text": "Airspace Explorer is a flight tracking and airspace education app developed by the National Air Traffic Control System of the UK. It displays real time air traffic for the entire world, with a focus on the UK and Europe. With a lot auxiliary information in addition the the real time it makes a great educational app."
+    },
+    {
+        "img": "natgeo_composite.png",
+        "url": "",
+        "title": "National Geographic World Atlas",
+        "text": "What can you say about this one? It’s National Geographic World Atlas. We did the globe for version 4.0. In addition to using our WhirlyGlobe-Maply toolkit, we did a lot of custom work to get that NatGeo look and feel."
+    },
+    {
+        "img": "darksky_composite.png",
+        "url": "https://darksky.net/app/",
+        "title": "Dark Sky",
+        "text": "Dark Sky is a favorite weather app of its users. Not only will it tell when it's going to rain, it'll show you beautiful animated weather and temperature data. We did the interactive globe."
+    },
+    {
+        "img": "flyq_composite.png",
+        "url": "https://itunes.apple.com/us/app/flyq-efb/id915571252?mt=8",
+        "title": "FlyQ EFB",
+        "text": "FlyQ EFB is one of the popular iOS aviation apps. It's used by private pilots for flight planning and visualization. They use WhirlyGlobe-Maply for the maps and we did much of the custom integration."
+    },
+    {
+        "img": "fielda_composite.png",
+        "url": "https://apps.apple.com/us/app/fielda-freedom/id1471791163",
+        "title": "Fielda Freedom",
+        "text": "This app is used by utilities to manage their activities in the field. It pairs an intelligent offline syncing system with some rather challenging maps and a very customizable display system. We did the map, of course, and some of the database work."
+    },
+    {
+        "img": "saildrone_composite.png",
+        "url": "https://www.saildrone.com/forecast",
+        "title": "Saildrone Forecast",
+        "text": "Saildrone Forecast is a gorgeous weather app we spent a significant amount of time developing and updating. It implements a variety of complex weather graphics, such as particles for wind, mixing of data in disparate coordinate systems, and real time contours for pressure."
+    }
+]
