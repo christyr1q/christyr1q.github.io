@@ -64,28 +64,27 @@
 
 @layer components {
     .h1-main {
-        @apply font-sans font-bold text-mousebirdDarkGray text-3xl sm:text-4xl xl:text-5xl
-    }
-    .h2-main {
-        @apply font-sans font-semibold leading-tight text-center text-mousebirdDarkGray
-    }
-    .h3-main {
-        @apply font-sans font-semibold leading-snug text-center text-mousebirdBlue text-3xl
+        @apply font-sans font-bold leading-8 text-mousebirdDarkGray text-3xl sm:text-4xl xl:text-5xl
     }
     .subhead-main {
-        @apply font-sans font-normal text-mousebirdDarkGray my-4 text-lg sm:text-xl xl:text-3xl
-    }
-    .p-main {
-        @apply font-serif font-normal text-mousebirdDarkGray text-base mx-6 lg:text-lg mt-4
-    }
-    .p-intro {
-        @apply p-main text-center
-    }
-    .div-main {
-        @apply my-14 md:my-16 lg:my-16 xl:my-20
+        @apply font-sans font-normal leading-tight text-mousebirdDarkGray my-4 text-lg sm:text-xl xl:text-3xl
     }
     .btn-main {
-        @apply pt-2 pr-5 pb-3 pl-5 rounded-full bg-mousebirdGreen border-0
+        @apply font-sans font-semibold text-white bg-mousebirdGreen pt-2 pr-5 pb-3 pl-5 text-base lg:text-lg xl:text-xl rounded-full border-0
+    }
+
+    .p-main {
+        @apply font-serif leading-7 font-normal text-mousebirdDarkGray text-base lg:text-lg mt-4 text-center
+    }
+
+    .h2-main {
+        @apply font-sans font-semibold leading-tight text-center text-mousebirdDarkGray text-2xl md:text-3xl lg:text-4xl
+    }
+    .h3-main {
+        @apply font-sans font-semibold leading-snug text-center text-mousebirdBlue text-xl md:text-2xl xl:text-3xl
+    }
+    .div-main {
+        @apply py-14 md:py-16 lg:py-16 xl:py-20
     }
     .btn-main-text {
         @apply font-bold text-base lg:text-lg xl:text-xl text-white hover:text-mousebirdBlue duration-300
