@@ -25,6 +25,7 @@
 		"bufferutil": "^4.0.3",
 		"canvas": "^2.7.0",
 		"markdown-it-link-attributes": "^3.0.0",
+		"nunjucks-date": "^1.5.0",
 		"utf-8-validate": "^5.0.4"
 	}
 }

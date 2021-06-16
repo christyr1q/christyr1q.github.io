@@ -152,15 +152,43 @@
     </div>
 </div>
 
-<div id="news" class="div-main">
-<h1>News</h1>
+<div class="w-full bg-mousebirdBlue bg-opacity-10">
+<div id="news" class="div-main w-full px-4 md:px-10 xl:px-16">
+<h1 class="h1-main text-black text-center">News</h1>
+
+<div class="grid grid-cols-1 mt-10 md:mt-12 lg:mt-14 xl:mt-16">
+    {% for post in collections.posts.slice(0,3) %}
+        {% if post.data.description %}
+        {% set desc = post.data.description %}
+        {% else %}
+        {% set desc = post.templateContent | striptags | truncate(180, true) %}
+        {% endif %}
+    <div class="mt-6 md:mt-2 lg:mt-1 xl:mt-0 sm:grid sm:grid-cols-2 sm:place-items-stretch gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
+        {% if loop.index0%2 > 0 %}
+            {% set firstEntry = "order-first" %}
+            {% set secondEntry = "order-last" %}
+        {% else %}
+            {% set firstEntry = "order-last" %}
+            {% set secondEntry = "order-first" %}
+        {% endif %}
+        <img src="assets/img/{{post.data.thumb}}" class="{{firstEntry}}">
+        <div class="flex flex-col self-center {{secondEntry}}">
+            <h3 class="h3-main text-left">{{post.data.title}}</h2>
+            <p class="p-main text-left">{{post.date.toUTCString()}}</p>
+            <p class="p-main text-left">{{desc}}</p>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 
-<div id="contact" class="div-main">
+</div>
+</div>
+
+<div id="contact" class="div-main w-full px-4 md:px-10 xl:px-16">
 <h1>Get in touch.</h1>
 </div>
 
-<div id="details" class="div-main">
+<div id="details" class="div-main w-full px-4 md:px-10 xl:px-16">
 <h1>Technical Details and Thanks</h1>
 <p>This site is built on 11ty and Tailwind CSS. Special thanks to Dafiul Haq for the 
 vredeburg template which we used as our starting point.<p>

@@ -6,6 +6,7 @@ const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const dateFilter = require('nunjucks-date');
 
 async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
