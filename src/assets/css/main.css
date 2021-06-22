@@ -83,7 +83,7 @@
         @apply font-sans font-semibold leading-tight text-center text-mousebirdDarkGray text-2xl md:text-3xl lg:text-4xl
     }
     .h3-main {
-        @apply font-sans font-semibold leading-snug text-center text-mousebirdBlue text-xl md:text-2xl xl:text-3xl
+        @apply font-sans font-semibold leading-snug text-center text-mousebirdBlue hover:text-mousebirdGreen focus:text-mousebirdGreen active:text-mousebirdGreen text-xl md:text-2xl xl:text-3xl
     }
     .div-main {
         @apply flex flex-col mx-auto max-w-screen-mcw py-14 md:py-16 lg:py-16 xl:py-20

@@ -1,11 +1,11 @@
 [
     {
         "label": "Products",
-        "url": "#products"
+        "url": "/index.html#products"
     },
     {
         "label": "Apps",
-        "url": "#apps"
+        "url": "/index.html#apps"
     },
     {
         "label": "Blog",
@@ -13,6 +13,6 @@
     },
     {
         "label": "Contact",
-        "url": "#contact"
+        "url": "/index.html#contact"
     }
 ]

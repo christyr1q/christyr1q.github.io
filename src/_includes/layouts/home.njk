@@ -62,7 +62,9 @@
         And the back end to support it. That’s iOS, Android and the active services to support them.
         </p>
         <button type="button" class="btn-main">
-            <p class="btn-main-text"> Contact Us<p>
+            <a href="/index.html#contact" rel="noopener">
+                <p class="btn-main-text"> Contact Us<p>
+            </a>
         </button>
     </div>
 
@@ -110,7 +112,9 @@
 
     </div>
 
+    <a href="https://mousebird-consulting-inc.github.io/WhirlyGlobe/" target="_blank">
     <h3 class="h3-main place-self-start mt-8 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16">WhirlyGlobe-Maply Toolkit</h3>
+    </a>
 
     <p class="p-main text-left">WhirlyGlobe-Maply is a geospatial display SDK for iPhone, iPad, and Android devices. 
     We're proud to offer this amazing globe and map toolkit as open source.</p>
@@ -118,7 +122,10 @@
     aviation. It’s big and functional, but friendly, with a nice selection of tutorials and a 
     comfortable native API on each platform.</p>
 
+    <a href="mailto:contact@mousebirdconsulting.com?subject=Support" target="_blank">
     <h3 class="h3-main place-self-start mt-8 lg:mt-10 xl:mt-12">WhirlyGlobe-Maply Support</h3>
+    </a>
+
     <p class="p-main text-left">WhirlyGlobe-Maply is open source, but we do offer a support contract. It's a simpler deal 
     than paying us by the hour and the contract is 50% less likely to annoy your lawyer.</p>
     <p class="p-main text-left">We offer both iOS and Android support contracts. You get quick response to your questions, 
@@ -133,6 +140,7 @@
 <h1 class="h1-main text-black text-center">Client Apps</h1>
     <div class="grid grid-cols-1 mt-10 md:mt-12 lg:mt-14 xl:mt-16">
     {% for entry in apps %}
+    <a href="{{entry.url}}" target="blank">    
     <div class="mt-6 md:mt-2 lg:mt-1 xl:mt-0 sm:grid sm:grid-cols-2 sm:place-items-stretch gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
         {% if loop.index0%2 > 0 %}
             {% set firstEntry = "order-first" %}
@@ -147,6 +155,7 @@
             <p class="p-main">{{entry.text}}</p>
         </div>
     </div>
+    </a>
     {% endfor %}
     </div>
     </div>
@@ -163,6 +172,7 @@
         {% else %}
         {% set desc = post.templateContent | striptags | truncate(180, true) %}
         {% endif %}
+    <a href="{{post.data.page.fileSlug}}/index.html" rel="noopener">
     <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-18 grid grid-cols-1 sm:grid-cols-12 sm:justify-items-stretch
                 gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
         {% if loop.index0%2 > 0 %}
@@ -187,8 +197,11 @@
                  >
         {% endif %}
     </div>
+    </a>
     {% endfor %}
-    <h3 class="h3-main text-base">See more news. >></h3>
+    <a href="/blog.html" rel="noopener">
+        <h3 class="h3-main text-base">See more news. >></h3>
+    </a>
 </div>
 
 </div>
@@ -198,7 +211,9 @@
     <div class="flex flex-col sm:flex-row self-center sm:gap-x-8 lg:gap-x-10 xl:gap-x-12">
         <h2 class="h2-main sm:py-0 self-center">Get in touch.</h2>
         <button type="button" class="btn-main mt-4 sm:mt-0 sm:self-center">
-            <p class="btn-main-text">Contact Us<p>
+            <a href="mailto:contact@mousebirdconsulting.com" target="_blank">
+                <p class="btn-main-text">Contact Us<p>
+            </a>
         </button>
     </div>
 </div>
@@ -217,6 +232,7 @@ consulting exclusively.<p>
 
 </div>
 </div>
+
 </div>
 
 </article>
