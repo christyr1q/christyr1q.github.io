@@ -154,7 +154,7 @@
 
 <div class="w-full bg-mousebirdBlue bg-opacity-10">
 <div id="news" class="div-main w-full px-4 md:px-10 xl:px-16">
-<h1 class="h1-main text-black text-center">News</h1>
+<h1 class="h1-main text-black text-center">NEWS</h1>
 
 <div class="grid grid-cols-1 mt-10 md:mt-12 lg:mt-14 xl:mt-16">
     {% for post in collections.posts.slice(0,3) %}
@@ -163,39 +163,58 @@
         {% else %}
         {% set desc = post.templateContent | striptags | truncate(180, true) %}
         {% endif %}
-    <div class="mt-6 md:mt-2 lg:mt-1 xl:mt-0 sm:grid sm:grid-cols-2 sm:place-items-stretch gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
+    <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-18 grid grid-cols-1 sm:grid-cols-12 sm:justify-items-stretch
+                gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
         {% if loop.index0%2 > 0 %}
-            {% set firstEntry = "order-first" %}
-            {% set secondEntry = "order-last" %}
+            <img src="assets/img/{{post.data.thumb}}" 
+                 class="sm:col-start-1 sm:col-span-4 md:col-start-2 lg:col-start-3 lg:col-span-3 sm:w-full sm:h-full object-cover rounded-xl"
+                 style="box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);"
+                 >
+            <div class="flex flex-col sm:col-span-8 md:col-span-6 lg:col-span-5">
+                <h3 class="h3-main text-left">{{post.data.title}}</h2>
+                <p class="p-date">{{post.date | postDate }}</p>
+                <p class="p-main text-left">{{desc}}</p>
+            </div>
         {% else %}
-            {% set firstEntry = "order-last" %}
-            {% set secondEntry = "order-first" %}
+            <div class="flex flex-col order-last sm:order-first sm:col-start-1 sm:col-span-8 md:col-start-2 md:col-span-6 lg:col-start-3 lg:col-span-5">
+                <h3 class="h3-main text-left">{{post.data.title}}</h2>
+                <p class="p-date">{{post.date | postDate }}</p>
+                <p class="p-main text-left">{{desc}}</p>
+            </div>
+            <img src="assets/img/{{post.data.thumb}}" 
+                 style="box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);"
+                 class="order-first sm:order-last sm:col-span-4 lg:col-span-3 sm:w-full sm:h-full object-cover rounded-xl"
+                 >
         {% endif %}
-        <img src="assets/img/{{post.data.thumb}}" class="{{firstEntry}}">
-        <div class="flex flex-col self-center {{secondEntry}}">
-            <h3 class="h3-main text-left">{{post.data.title}}</h2>
-            <p class="p-main text-left">{{post.date.toUTCString()}}</p>
-            <p class="p-main text-left">{{desc}}</p>
-        </div>
     </div>
     {% endfor %}
+    <h3 class="h3-main text-base">See more news. >></h3>
 </div>
 
 </div>
 </div>
 
 <div id="contact" class="div-main w-full px-4 md:px-10 xl:px-16">
-<h1>Get in touch.</h1>
+    <div class="flex flex-col sm:flex-row self-center sm:gap-x-8 lg:gap-x-10 xl:gap-x-12">
+        <h2 class="h2-main sm:py-0 self-center">Get in touch.</h2>
+        <button type="button" class="btn-main mt-4 sm:mt-0 sm:self-center">
+            <p class="btn-main-text">Contact Us<p>
+        </button>
+    </div>
 </div>
 
-<div id="details" class="div-main w-full px-4 md:px-10 xl:px-16">
-<h1>Technical Details and Thanks</h1>
-<p>This site is built on 11ty and Tailwind CSS. Special thanks to Dafiul Haq for the 
+<div id="details" class="div-main w-full bg-mousebirdBlue bg-opacity-10 px-4 md:px-10 xl:px-16">
+
+<h2 class="h2-main text-center">Technical Details and Thanks</h2>
+<p class="p-main text-center">
+This site is built on 11ty and Tailwind CSS. Special thanks to Dafiul Haq for the 
 vredeburg template which we used as our starting point.<p>
 
-<p>We’ve retained the copyrights from the various sources and any extensions we've made are 
+<p class="p-main text-center">We’ve retained the copyrights from the various sources and any extensions we've made are 
 subject to those same copyrights. However, the content of the site belongs to mousebird 
 consulting exclusively.<p>
+
+</div>
 </div>
 
 </article>

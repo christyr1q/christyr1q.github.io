@@ -6,7 +6,7 @@ const Image = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
 const mila = require("markdown-it-link-attributes");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const dateFilter = require('nunjucks-date');
+const { DateTime } = require("luxon");
 
 async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
@@ -163,7 +163,11 @@ module.exports = (config) => {
 
   config.addFilter('readableDate', require('./lib/filters/readableDate'));
   config.addFilter('minifyJs', require('./lib/filters/minifyJs'));
-
+  config.addFilter("postDate", (dateObj) => {
+    let dt = DateTime.fromJSDate(dateObj);
+    return DateTime.fromJSDate(dateObj).toFormat('dd MMMM yyyy').toUpperCase();
+  });
+  
   config.addTransform('minifyHtml', require('./lib/transforms/minifyHtml'));
 
   config.addCollection('posts', require('./lib/collections/posts'));
