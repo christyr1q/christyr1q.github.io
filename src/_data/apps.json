@@ -18,13 +18,13 @@
         "text": "Dark Sky is a favorite weather app of its users. Not only will it tell when it's going to rain, it'll show you beautiful animated weather and temperature data. We did the interactive globe."
     },
     {
-        "img": "nats_composite.png",
+        "img": "flyq_efb_composite@1104px.png",
         "url": "https://itunes.apple.com/us/app/flyq-efb/id915571252?mt=8",
         "title": "FlyQ EFB",
         "text": "FlyQ EFB is one of the popular iOS aviation apps. It's used by private pilots for flight planning and visualization. They use WhirlyGlobe-Maply for the maps and we did much of the custom integration."
     },
     {
-        "img": "nats_composite.png",
+        "img": "fielda_freedom_composite@1104px.png",
         "url": "https://apps.apple.com/us/app/fielda-freedom/id1471791163",
         "title": "Fielda Freedom",
         "text": "This app is used by utilities to manage their activities in the field. It pairs an intelligent offline syncing system with some rather challenging maps and a very customizable display system. We did the map, of course, and some of the database work."
