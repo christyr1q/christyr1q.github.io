@@ -43,7 +43,7 @@
 </head>	
 
 <body class="flex flex-col h-screen bg-white text-gray-800 break-words">
-    {% include "partials/header-blog.njk" %}
+    {% include "partials/header.njk" %}
     <main class="mx-7 lg:mx-6 mt-32 my-0 mb-8 flex-grow">
         {% if layout === "post" %}
         {{ content | safe }}
