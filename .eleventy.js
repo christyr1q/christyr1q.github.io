@@ -8,6 +8,7 @@ const mila = require("markdown-it-link-attributes");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 
+// Place an image with a predefined set of sizes
 async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
     widths: [16,32,75,150,300,600,1200,null],
@@ -30,6 +31,51 @@ async function imageShortcode(src, url, alt, caption, sizes) {
   const img = Image.generateHTML(metadata, imageAttributes)
 
   return img;
+}
+
+// This version takes an input size and deals with PNGs
+async function imageProcessShortcode(src, width, theClass, pictureClass, style) {
+  // Generate a list of reasonable widths
+  var targetWidths = new Array();
+  var curWidth = width;
+  while (curWidth > 32 && Math.round(curWidth) == curWidth) {
+    targetWidths.push(curWidth);
+    curWidth /= 2;
+  }
+  targetWidths.push(null);
+
+  var baseFmt = "jpeg"
+  if (src.endsWith("png")) {
+    baseFmt = "png";
+  }
+
+  let metadata = await Image(src, {
+    widths: targetWidths,
+    formats: [baseFmt, "webp"],
+    urlPath: "assets/img/",
+    outputDir: "./dist/assets/img/"
+  });
+
+  let maxWidth = width;
+
+  var imageAttributes = {
+    alt: '',
+    sizes: `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`,
+    loading: "lazy",
+    decoding: "async",
+    style: style,
+    'class': theClass
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  let img = Image.generateHTML(metadata, imageAttributes);
+  if (pictureClass.length > 0) {
+    imgPict = img.replace('<picture','<picture class=\'' + pictureClass + '\'');
+  } else {
+    imgPict = img;
+  }
+
+  return imgPict;
 }
 
 async function imagePlaceShortcode(content, args) {
@@ -178,6 +224,10 @@ module.exports = (config) => {
   config.addNunjucksAsyncShortcode("image", imageShortcode);
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
+
+  config.addNunjucksAsyncShortcode("ImageProcess", imageProcessShortcode);
+  config.addLiquidShortcode("ImageProcess", imageProcessShortcode);
+  config.addJavaScriptFunction("ImageProcess", imageProcessShortcode);
 
   config.addPairedNunjucksAsyncShortcode("ImagePlace", imagePlaceShortcode);
   config.addPairedLiquidShortcode("ImagePlace", imagePlaceShortcode);

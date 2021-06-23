@@ -63,23 +63,25 @@
         </p>
         <button type="button" class="btn-main">
             <a href="/index.html#contact" rel="noopener">
-                <p class="btn-main-text"> Contact Us<p>
+                <p class="btn-main-text"> Contact Us</p>
             </a>
         </button>
     </div>
 
-    <div class="flex-grow"> </div>
+    <div class="flex flex-shrink-0 h-80 w-40 lg:w-80">
 
-    <img class="mr-0 h-80 lg:hidden my-12" 
-         style="filter: drop-shadow(0 6vw 6vw rgba(35, 31, 32, .9));"
-         src="assets/img/half_globe@632px.png" 
-         srcset="assets/img/half_globe@316px.png, assets/img/half_globe@632px.png 2x">
+    {% ImageProcess 'src/assets/img/half_globe@632px.png', 632, 
+                'flex flex-shrink-0 mr-0 h-80 w-40 lg:hidden my-12',
+                '',
+                'filter: drop-shadow(0 6vw 6vw rgba(35, 31, 32, .9));' %}
 
-    <img class="mr-0 h-80 hidden lg:flex my-12"
-         style="filter: drop-shadow(0 3vw 3vw rgba(35, 31, 32, .9));"
-         src="assets/img/whole_globe@632px.png" 
-         srcset="assets/img/whole_globe@632px.png, assets/img/whole_globe@1264px.png 2x">
-</div>
+    {% ImageProcess 'src/assets/img/whole_globe@632px.png', 632, 
+                'lg:flex lg:flex-shrink-0 mr-0 h-80 w-80 hidden my-12',
+                '',
+                'filter: drop-shadow(0 3vw 3vw rgba(35, 31, 32, .9));' %}
+    </div>
+    
+    </div>
 
 <div class="sm:max-w-screen-md mx-auto py-14 sm:py-12 md:pb-14 lg:pb-16 xl:pb-18">
     <p class="p-main mx-6 pt-2 text-center lg:pt-3 xl:text-xl">
@@ -102,13 +104,15 @@
 
     <div class="grid grid-cols-1 auto-col-autos sm:grid-cols-2 sm:mt-10 md:mt-12 lg:mt-14 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12">
 
-    <img class="mt-10 sm:mt-0 rounded-lg" 
-            style="box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);"
-            src="assets/img/whirly1_@904px.jpg">
+    {% ImageProcess 'src/assets/img/whirly1_@904px.jpg', 904, 
+                'mt-10 sm:mt-0 rounded-lg',
+                '',
+                "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
 
-    <img class="mt-6 sm:mt-0 rounded-lg" 
-            style="box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);"
-            src="assets/img/whirly2_@904px.jpg">
+    {% ImageProcess 'src/assets/img/whirly2_@904px.jpg', 904, 
+                'mt-6 sm:mt-0 rounded-lg',
+                '',
+                "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
 
     </div>
 
@@ -151,7 +155,8 @@
             {% set firstEntry = "order-last" %}
             {% set secondEntry = "order-first" %}
         {% endif %}
-        <img src="assets/img/{{entry.img}}" class="{{firstEntry}}">
+        {% ImageProcess 'src/assets/img/' + entry.img, 1104, 
+                    $firstEntry, '', "" %}
         <div class="flex flex-col self-center {{secondEntry}}">
             <h3 class="h3-main">{{entry.title}}</h2>
             <p class="p-main">{{entry.text}}</p>
@@ -178,10 +183,12 @@
     <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-18 grid grid-cols-1 sm:grid-cols-12 sm:justify-items-stretch
                 gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
         {% if loop.index0%2 > 0 %}
-            <img src="assets/img/{{post.data.thumb}}" 
-                 class="sm:col-start-1 sm:col-span-4 md:col-start-2 lg:col-start-3 lg:col-span-3 sm:w-full sm:h-full object-cover rounded-xl"
-                 style="box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);"
-                 >
+            <div class="flex sm:col-start-1 sm:col-span-4 md:col-start-2 lg:col-start-3 lg:col-span-3 sm:w-full sm:h-full object-cover">
+            {% ImageProcess 'src/posts/img/' + post.data.thumb, 960, 
+                        "rounded-xl object-cover", 
+                        'flex object-cover',
+                        "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+            </div>
             <div class="flex flex-col sm:col-span-8 md:col-span-6 lg:col-span-5">
                 <h3 class="h3-main text-left">{{post.data.title}}</h2>
                 <p class="p-date">{{post.date | postDate }}</p>
@@ -193,10 +200,12 @@
                 <p class="p-date">{{post.date | postDate }}</p>
                 <p class="p-main text-left">{{desc}}</p>
             </div>
-            <img src="assets/img/{{post.data.thumb}}" 
-                 style="box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);"
-                 class="order-first sm:order-last sm:col-span-4 lg:col-span-3 sm:w-full sm:h-full object-cover rounded-xl"
-                 >
+            <div class="flex order-first sm:order-last sm:col-span-4 lg:col-span-3 sm:w-full sm:h-full object-cover">
+            {% ImageProcess 'src/posts/img/' + post.data.thumb, 960, 
+                        "rounded-xl object-cover", 
+                        'flex object-cover',
+                        "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+            </div>
         {% endif %}
     </div>
     </a>
