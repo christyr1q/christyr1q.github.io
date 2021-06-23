@@ -70,12 +70,18 @@
 
     <div class="flex flex-shrink-0 h-80 w-40 lg:w-80">
 
-    {% ImageProcess 'src/assets/img/half_globe@632px.png', 632, 
+    {% ImageProcess 'src/assets/img/half_globe@632px.png', 
+                true,
+                "globe",
+                632, 
                 'flex flex-shrink-0 mr-0 h-80 w-40 lg:hidden my-12',
-                '',
+                'globe',
                 'filter: drop-shadow(0 6vw 6vw rgba(35, 31, 32, .9));' %}
 
-    {% ImageProcess 'src/assets/img/whole_globe@632px.png', 632, 
+    {% ImageProcess 'src/assets/img/whole_globe@632px.png', 
+                true,
+                "globe",
+                632, 
                 'lg:flex lg:flex-shrink-0 mr-0 h-80 w-80 hidden my-12',
                 '',
                 'filter: drop-shadow(0 3vw 3vw rgba(35, 31, 32, .9));' %}
@@ -104,12 +110,18 @@
 
     <div class="grid grid-cols-1 auto-col-autos sm:grid-cols-2 sm:mt-10 md:mt-12 lg:mt-14 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12">
 
-    {% ImageProcess 'src/assets/img/whirly1_@904px.jpg', 904, 
+    {% ImageProcess 'src/assets/img/whirly1_@904px.jpg', 
+                false,
+                "Map",
+                904, 
                 'mt-10 sm:mt-0 rounded-lg',
                 '',
                 "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
 
-    {% ImageProcess 'src/assets/img/whirly2_@904px.jpg', 904, 
+    {% ImageProcess 'src/assets/img/whirly2_@904px.jpg', 
+                false,
+                "Globe",
+                904, 
                 'mt-6 sm:mt-0 rounded-lg',
                 '',
                 "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
@@ -155,7 +167,10 @@
             {% set firstEntry = "order-last" %}
             {% set secondEntry = "order-first" %}
         {% endif %}
-        {% ImageProcess 'src/assets/img/' + entry.img, 1104, 
+        {% ImageProcess 'src/assets/img/' + entry.img, 
+                    true,
+                    entry.title,
+                    1104, 
                     $firstEntry, '', "" %}
         <div class="flex flex-col self-center {{secondEntry}}">
             <h3 class="h3-main">{{entry.title}}</h2>
@@ -184,7 +199,10 @@
                 gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
         {% if loop.index0%2 > 0 %}
             <div class="flex sm:col-start-1 sm:col-span-4 md:col-start-2 lg:col-start-3 lg:col-span-3 sm:w-full sm:h-full object-cover">
-            {% ImageProcess 'src/posts/img/' + post.data.thumb, 960, 
+            {% ImageProcess 'src/posts/img/' + post.data.thumb, 
+                        false,
+                        post.data.title,
+                        960, 
                         "rounded-xl object-cover", 
                         'flex object-cover',
                         "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
@@ -201,7 +219,10 @@
                 <p class="p-main text-left">{{desc}}</p>
             </div>
             <div class="flex order-first sm:order-last sm:col-span-4 lg:col-span-3 sm:w-full sm:h-full object-cover">
-            {% ImageProcess 'src/posts/img/' + post.data.thumb, 960, 
+            {% ImageProcess 'src/posts/img/' + post.data.thumb, 
+                        false,
+                        post.data.title,
+                        960, 
                         "rounded-xl object-cover", 
                         'flex object-cover',
                         "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}

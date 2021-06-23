@@ -34,10 +34,11 @@ async function imageShortcode(src, url, alt, caption, sizes) {
 }
 
 // This version takes an input size and deals with PNGs
-async function imageProcessShortcode(src, width, theClass, pictureClass, style) {
+async function imageProcessShortcode(src, hasTransparency, alt, width, theClass, pictureClass, style) {
   // Generate a list of reasonable widths
   var targetWidths = new Array();
   var curWidth = width;
+  curWidth /= 2;
   while (curWidth > 32 && Math.round(curWidth) == curWidth) {
     targetWidths.push(curWidth);
     curWidth /= 2;
@@ -45,13 +46,13 @@ async function imageProcessShortcode(src, width, theClass, pictureClass, style) 
   targetWidths.push(null);
 
   var baseFmt = "jpeg"
-  if (src.endsWith("png")) {
+  if (hasTransparency) {
     baseFmt = "png";
   }
 
   let metadata = await Image(src, {
     widths: targetWidths,
-    formats: [baseFmt, "webp"],
+    formats: ["webp", baseFmt],
     urlPath: "assets/img/",
     outputDir: "./dist/assets/img/"
   });
@@ -59,7 +60,7 @@ async function imageProcessShortcode(src, width, theClass, pictureClass, style) 
   let maxWidth = width;
 
   var imageAttributes = {
-    alt: '',
+    alt: alt,
     sizes: `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`,
     loading: "lazy",
     decoding: "async",
