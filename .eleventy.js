@@ -12,7 +12,7 @@ const { DateTime } = require("luxon");
 async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
     widths: [16,32,75,150,300,600,1200,null],
-    formats: ["jpeg", "webp"],
+    formats: ["webp", "jpeg"],
     urlPath: "assets/img/",
     outputDir: "./dist/assets/img/"
   });
@@ -99,7 +99,7 @@ async function imagePlaceShortcode(content, args) {
 
   let metadata = await Image(fName, {
     widths: [16,32,75,150,300,600,1200,null],
-    formats: ["jpeg", "webp"],
+    formats: ["webp", "jpeg"],
     urlPath: `/assets/img/`,
     outputDir: "./dist/assets/img/"
   });
