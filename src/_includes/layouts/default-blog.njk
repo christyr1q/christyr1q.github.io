@@ -42,19 +42,27 @@
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 </head>	
 
-<body class="flex flex-col h-screen bg-white text-gray-800 break-words">
-    {% include "partials/header.njk" %}
-    <main class="mx-7 lg:mx-6 mt-32 my-0 mb-8 flex-grow">
-        {% if layout === "post" %}
-        {{ content | safe }}
-        {% else %}
-        <div class="max-w-5xl mx-auto">
-            {{ content | safe }}
-        </div>
-        {% endif %}
-    </main>
-    {% include "partials/footer.njk" %}
-    <script src="{{ '/assets/js/bundle.js' | url }}"></script>
+<body class="h-screen white">
+
+{% include "partials/header.njk" %}
+
+<main>
+
+<div class="w-full h-20"> </div>
+
+{% if layout === "post" %}
+{{ content | safe }}
+{% else %}
+<div class="max-w-5xl mx-auto">
+    {{ content | safe }}
+</div>
+{% endif %}
+
+</main>
+
+{% include "partials/footer.njk" %}
+<script src="{{ '/assets/js/bundle.js' | url }}"></script>
+
 </body>
 
 </html>
