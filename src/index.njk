@@ -1,0 +1,277 @@
+---
+---
+
+{%- set metaTitle -%}
+    {%- if not title -%}{{ site.title }} - {{ site.description | safe }}
+    {%- else -%}{{ title | safe }} | {{ site.title }}
+    {%- endif -%}
+{%- endset -%}
+{%- set metaDesc -%}
+    {%- if not description -%}{{ site.description | safe }}
+    {%- else -%}{{ description | safe }}
+    {%- endif -%}
+{%- endset -%}
+{%- set metaKeywords -%}
+    {%- if tags -%}{%- for tag in tags -%}{{ tag }},{%- endfor -%}{%- endif -%}
+    {%- if site.keywords -%}
+        {%- for keyword in site.keywords -%}
+            {{ keyword }}{%- if not loop.last %},{% endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endset -%}
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ metaTitle }}</title>
+    <meta name="title" content="{{ metaTitle }}">
+    <meta name="description" content="{{ metaDesc }}">
+    <meta name="keywords" content="{{ metaKeywords }}">
+    <meta name="author" content="{{ author.name }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ site.url | url }}{{ page.url }}">
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/img/favicon.png' | url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | url }}">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+</head>	
+
+<body class="h-screen white">
+{% include "partials/header.njk" %}
+
+<main>
+
+<div class="w-full h-20"> </div>
+
+<article>
+
+<div id="intro" class="div-main">
+
+<div class="flex flex-row">
+    <div class="mx-6 my-12 sm:self-center">
+        <h1 class="h1-main">Geospatial data display for mobile devices</h1>
+        <p class="subhead-main">
+        And the back end to support it. That’s iOS, Android and the active services to support them.
+        </p>
+        <button type="button" class="btn-main">
+            <a href="/index.html#contact" rel="noopener">
+                <p class="btn-main-text"> Contact Us</p>
+            </a>
+        </button>
+    </div>
+
+    <div class="flex flex-shrink-0 h-80 w-40 lg:w-80">
+
+    {% ImageProcess 'src/assets/img/half_globe@632px.png', 
+                true,
+                "globe",
+                632, 
+                'flex flex-shrink-0 mr-0 h-80 w-40 lg:hidden my-12',
+                'globe',
+                'filter: drop-shadow(0 6vw 6vw rgba(35, 31, 32, .9));' %}
+
+    {% ImageProcess 'src/assets/img/whole_globe@632px.png', 
+                true,
+                "globe",
+                632, 
+                'lg:flex lg:flex-shrink-0 mr-0 h-80 w-80 hidden my-12',
+                '',
+                'filter: drop-shadow(0 3vw 3vw rgba(35, 31, 32, .9));' %}
+    </div>
+    
+    </div>
+
+<div class="sm:max-w-screen-md mx-auto py-14 sm:py-12 md:pb-14 lg:pb-16 xl:pb-18">
+    <p class="p-main mx-6 pt-2 text-center lg:pt-3 xl:text-xl">
+    Our work can be found in a wide variety of weather, aviation, education and miscellaneous apps. 
+    We’ve been warming the pockets of millions of users worldwide for at least a decade.
+    </p>
+    <p class="p-main mx-6 pt-4 text-center lg:pt-5 xl:text-xl xl:pt-5">
+    As you might imagine, this is tricky stuff. We’re skilled in the ways of OpenGL ES, Metal, 
+    threading, networking, geospatial data processing, and user interfaces. Our stuff is known for 
+    being fast and responsive on mobile devices and simple to run on the back end.
+    </p>
+</div>
+
+</div>
+
+<div class="w-full bg-mousebirdBlue bg-opacity-10">
+    <div id="products" class="div-main w-full px-4 md:px-10 xl:px-16">
+
+    <h1 class="h1-main text-black text-center">Products</h1>
+
+    <div class="grid grid-cols-1 auto-col-autos sm:grid-cols-2 sm:mt-10 md:mt-12 lg:mt-14 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12">
+
+    {% ImageProcess 'src/assets/img/whirly1_@904px.jpg', 
+                false,
+                "Map",
+                904, 
+                'mt-10 sm:mt-0 rounded-lg',
+                '',
+                "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+
+    {% ImageProcess 'src/assets/img/whirly2_@904px.jpg', 
+                false,
+                "Globe",
+                904, 
+                'mt-6 sm:mt-0 rounded-lg',
+                '',
+                "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+
+    </div>
+
+    <a href="https://mousebird-consulting-inc.github.io/WhirlyGlobe/" target="_blank">
+    <h3 class="h3-main place-self-start mt-8 sm:mt-10 md:mt-12 lg:mt-14 xl:mt-16">WhirlyGlobe-Maply Toolkit</h3>
+    </a>
+
+    <p class="p-main text-left">WhirlyGlobe-Maply is a geospatial display SDK for iPhone, iPad, and Android devices. 
+    We're proud to offer this amazing globe and map toolkit as open source.</p>
+    <p class="p-main text-left">You'll find WhirlyGlobe-Maply in a wide variety of apps, from weather to map to civil 
+    aviation. It’s big and functional, but friendly, with a nice selection of 
+    <a class="a-main" href="https://mousebird-consulting-inc.github.io/WhirlyGlobe/tutorial/" target="_blank">tutorials</a>
+    and a comfortable native API on each platform.</p>
+
+    <a href="mailto:contact@mousebirdconsulting.com?subject=Support" target="_blank">
+    <h3 class="h3-main place-self-start mt-8 lg:mt-10 xl:mt-12">WhirlyGlobe-Maply Support</h3>
+    </a>
+
+    <p class="p-main text-left">WhirlyGlobe-Maply is open source, but we do offer a support contract. It's a simpler deal 
+    than paying us by the hour and the contract is 50% less likely to annoy your lawyer.</p>
+    <p class="p-main text-left">We offer both iOS and Android support contracts. You get quick response to your questions, 
+    bug fixes and work arounds and input on the feature roadmap. 
+    <a class="a-main" href="mailto:contact@mousebirdconsulting.com?subject=Support" target="_blank">Contact us</a> for details.</p>
+    </div>
+
+    </div>
+
+</div>
+
+<div id="apps" class="div-main w-full px-4 md:px-10 xl:px-16">
+<h1 class="h1-main text-black text-center">Client Apps</h1>
+    <div class="grid grid-cols-1 mt-10 md:mt-12 lg:mt-14 xl:mt-16">
+    {% for entry in apps %}
+    <a href="{{entry.url}}" target="blank">    
+    <div class="mt-6 md:mt-2 lg:mt-1 xl:mt-0 sm:grid sm:grid-cols-2 sm:place-items-stretch gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
+        {% if loop.index0%2 > 0 %}
+            {% set firstEntry = "order-first" %}
+            {% set secondEntry = "order-last" %}
+        {% else %}
+            {% set firstEntry = "order-last" %}
+            {% set secondEntry = "order-first" %}
+        {% endif %}
+        {% ImageProcess 'src/assets/img/' + entry.img, 
+                    true,
+                    entry.title,
+                    1104, 
+                    $firstEntry, '', "" %}
+        <div class="flex flex-col self-center {{secondEntry}}">
+            <h3 class="h3-main">{{entry.title}}</h2>
+            <p class="p-main">{{entry.text}}</p>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+    </div>
+    </div>
+</div>
+
+<div class="w-full bg-mousebirdBlue bg-opacity-10">
+<div id="news" class="div-main w-full px-4 md:px-10 xl:px-16">
+<h1 class="h1-main text-black text-center">NEWS</h1>
+
+<div class="grid grid-cols-1 mt-10 md:mt-12 lg:mt-14 xl:mt-16">
+    {% for post in collections.posts.slice(0,3) %}
+        {% if post.data.description %}
+        {% set desc = post.data.description %}
+        {% else %}
+        {% set desc = post.templateContent | striptags | truncate(180, true) %}
+        {% endif %}
+    <a href="{{post.data.page.fileSlug}}/index.html" rel="noopener">
+    <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-18 grid grid-cols-1 sm:grid-cols-12 sm:justify-items-stretch
+                gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
+        {% if loop.index0%2 > 0 %}
+            <div class="flex sm:col-start-1 sm:col-span-4 md:col-start-2 lg:col-start-3 lg:col-span-3 sm:w-full sm:h-full object-cover">
+            {% ImageProcess 'src/posts/img/' + post.data.thumb, 
+                        false,
+                        post.data.title,
+                        960, 
+                        "rounded-xl object-cover", 
+                        'flex object-cover',
+                        "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+            </div>
+            <div class="flex flex-col sm:col-span-8 md:col-span-6 lg:col-span-5">
+                <h3 class="h3-main text-left">{{post.data.title}}</h2>
+                <p class="p-date">{{post.date | postDate }}</p>
+                <p class="p-main text-left">{{desc}}</p>
+            </div>
+        {% else %}
+            <div class="flex flex-col order-last sm:order-first sm:col-start-1 sm:col-span-8 md:col-start-2 md:col-span-6 lg:col-start-3 lg:col-span-5">
+                <h3 class="h3-main text-left">{{post.data.title}}</h2>
+                <p class="p-date">{{post.date | postDate }}</p>
+                <p class="p-main text-left">{{desc}}</p>
+            </div>
+            <div class="flex order-first sm:order-last sm:col-span-4 lg:col-span-3 sm:w-full sm:h-full object-cover">
+            {% ImageProcess 'src/posts/img/' + post.data.thumb, 
+                        false,
+                        post.data.title,
+                        960, 
+                        "rounded-xl object-cover", 
+                        'flex object-cover',
+                        "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+            </div>
+        {% endif %}
+    </div>
+    </a>
+    {% endfor %}
+    <a href="/blog.html" rel="noopener">
+        <h3 class="h3-main text-base">See more news. >></h3>
+    </a>
+</div>
+
+</div>
+</div>
+
+<div id="contact" class="div-main w-full px-4 md:px-10 xl:px-16">
+    <div class="flex flex-col sm:flex-row self-center sm:gap-x-8 lg:gap-x-10 xl:gap-x-12">
+        <h2 class="h2-main sm:py-0 self-center">Get in touch.</h2>
+        <button type="button" class="btn-main mt-4 sm:mt-0 sm:self-center">
+            <a href="mailto:contact@mousebirdconsulting.com" target="_blank">
+                <p class="btn-main-text">Contact Us<p>
+            </a>
+        </button>
+    </div>
+</div>
+
+<div class="w-full bg-mousebirdBlue bg-opacity-10">
+<div id="details" class="div-main w-full px-4 md:px-10 xl:px-16">
+
+<h2 class="h2-main text-center">Technical Details and Thanks</h2>
+<p class="p-main text-center">
+This site is built on <a class="a-main" href="https://www.11ty.dev/" target="_blank">11ty</a> and 
+<a class="a-main" href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>. 
+Special thanks to Dafiul Haq for the <a class="a-main" href="https://github.com/dafiulh/vredeburg/" target="_blank">vredeburg template</a> 
+which we used as our starting point.</p>
+
+<p class="p-main text-center">We’ve retained the copyrights from the various sources and any extensions we've made are 
+subject to those same copyrights. However, the content of the site belongs to mousebird 
+consulting exclusively.</p>
+
+</div>
+</div>
+
+</div>
+
+</article>
+
+    </main>
+    {% include "partials/footer.njk" %}
+    <script src="{{ '/assets/js/bundle.js' | url }}"></script>
+</body>
