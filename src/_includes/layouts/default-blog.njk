@@ -48,14 +48,10 @@
 
 <main>
 
-<div class="w-full h-20"> </div>
-
 {% if layout === "post" %}
-{{ content | safe }}
-{% else %}
-<div class="max-w-5xl mx-auto">
     {{ content | safe }}
-</div>
+{% else %}
+    {{ content | safe }}
 {% endif %}
 
 </main>

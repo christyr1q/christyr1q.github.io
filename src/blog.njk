@@ -7,8 +7,36 @@ pagination:
 permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}blog.html"
 ---
 
-<div class="flex flex-wrap mx-2">
-    {% include "partials/post-grid.njk" %}
+<div class="div-main bg-black mx-0 my-0 px-0 py-0">
+
+<div class="flex w-full h-20"> </div>
+
+<div class="black">
+{% ImageProcess 'src/assets/img/globe_for_blog@2x.jpg', 
+            false,
+            "dark globe",
+            2047, 
+            'h-80 w-full object-cover',
+            '',
+            '' %}
+</div>
+
+<h1 class="flex h1-main text-white p-48 h-80 text-left self-center absolute z-40">Mousebird News</h1>
+
+</div>
+
+<div class="div-main">
+
+{% set topPosts = collections.posts.slice(0,2) %}
+
+<h1 class="h1-main">Latest News</h1>
+
+{% include "partials/blog-agg-top.njk" %}
+
+<h1 class="h1-main">News Continued</h1>
+
+{% include "partials/post-grid.njk" %}
+
 </div>
 
 {% if collections.posts.length > site.paginate %}

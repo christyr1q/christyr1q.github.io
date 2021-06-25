@@ -1,0 +1,40 @@
+<div class="flex justify-center flex-wrap place-items-start">
+{% for name, length in collections.tagList %}
+    <a href="{{ '/tags/' | url }}{{ name }}">
+    <div class="flex flex-row object-none mx-1 mb-3 px-4 py-2 bg-gray-200 text-gray-700 font-medium rounded-full">
+        <p class="text-black">{{ name | capitalize }}</p>
+        <p class="px-2 py-1 ml-1 text-xs font-semibold bg-teal-300 text-teal-800 rounded-full">{{ length }}</p>
+    </div>
+    </a>
+{% endfor %}
+</div>
+
+{% for post in topPosts %}
+<div class="w-full">
+    <div class="rounded shadow-md h-full">
+        <a href="{{ post.url | url }}">
+            {% if post.data.thumb %}
+                {% ImagePlace src=post.data.thumb, justify='header' %}
+                {% endImagePlace %}
+            {% else %}
+                {% ImagePlace src='index_banner.png', justify='header' %}
+                {% endImagePlace %}
+            {% endif %}        
+            <div class="px-6 py-5">
+                <div class="font-semibold text-lg mb-2">
+                    <a class="text-gray-900 hover:text-gray-700" href="{{ post.url | url }}">{{ post.data.title }}</a>
+                </div>
+                <p class="text-gray-700 mb-1" title="Published date">{{ post.data.page.date | readableDate }}</p>
+                <p class="text-gray-800">
+                    {% if post.data.description %}
+                    {{ post.data.description }}
+                    {% else %}
+                    {{ post.templateContent | striptags | truncate(180, true) }}
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endfor %}
+
