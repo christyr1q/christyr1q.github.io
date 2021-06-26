@@ -2,7 +2,6 @@
 layout: post
 title: "App Store Mention: Santa's Big Helper"
 date: 2011-11-30
-thumb: "Screen shot 2011-11-30 at 8.41.38 AM.png"
 tags:
     - whirlyglobe
     - apps

@@ -94,4 +94,8 @@
     .btn-main-text {
         @apply font-bold text-base lg:text-lg xl:text-xl text-white hover:text-mousebirdBlue duration-300
     }
+
+    .div-blog {
+        @apply flex flex-col mx-auto max-w-screen-blog py-14 md:py-16 lg:py-16 xl:py-20
+    }
 }

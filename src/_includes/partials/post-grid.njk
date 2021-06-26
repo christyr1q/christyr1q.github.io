@@ -1,18 +1,25 @@
-{% for post in paged.posts %}
-<div class="w-full sm:w-1/2 md:w-1/3 self-stretch p-2 mb-2">
-    <div class="rounded shadow-md h-full">
-        <a href="{{ post.url | url }}">
-            {% if post.data.thumb %}
-                {% ImagePlace src=post.data.thumb, justify='header' %}
-                {% endImagePlace %}
-            {% else %}
-                {% ImagePlace src='index_banner.png', justify='header' %}
-                {% endImagePlace %}
-            {% endif %}        
-        </a>
-        <div class="px-6 py-5">
+<div class="grid grid-cols-1 mt-10 md:mt-12 lg:mt-14 xl:mt-16">
+    {% for post in paged.posts %}
+    <a href="{{ post.url | url }}" rel="noopener">
+    <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-18 grid grid-cols-1 sm:grid-cols-12 sm:justify-items-stretch
+                gap-x-4 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-12">
+        <div class="flex sm:col-start-1 sm:col-span-4 md:col-start-2 lg:col-start-3 lg:col-span-3 sm:w-full sm:h-full object-cover">
+        {% if post.data.thumb %}
+            {% set thumb = post.data.thumb %}
+        {% else %}
+            {% set thumb = 'index_banner.png' %}
+        {% endif %}
+        {% ImageProcess 'src/posts/img/' + thumb, 
+                    false,
+                    thumb,
+                    960, 
+                    "rounded-xl object-cover", 
+                    'flex object-cover',
+                    "box-shadow: -3vw 3vw 3vw rgba(35, 31, 32, .5);" %}
+        </div>
+        <div class="flex flex-col sm:col-span-8 md:col-span-6 lg:col-span-5">
             <div class="font-semibold text-lg mb-2">
-                <a class="text-gray-900 hover:text-gray-700" href="{{ post.url | url }}">{{ post.data.title }}</a>
+                <p class="p-main text-gray-900 hover:text-gray-700">{{ post.data.title }}</p>
             </div>
             <p class="text-gray-700 mb-1" title="Published date">{{ post.data.page.date | readableDate }}</p>
             <p class="text-gray-800">
@@ -24,5 +31,7 @@
             </p>
         </div>
     </div>
+    </a>
+    {% endfor %}
+
 </div>
-{% endfor %}
