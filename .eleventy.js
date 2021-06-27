@@ -13,7 +13,7 @@ async function imageShortcode(src, url, alt, caption, sizes) {
   let metadata = await Image(src, {
     widths: [16,32,75,150,300,600,1200,null],
     formats: ["webp", "jpeg"],
-    urlPath: "assets/img/",
+    urlPath: "/assets/img/",
     outputDir: "./dist/assets/img/"
   });
 
@@ -53,7 +53,7 @@ async function imageProcessShortcode(src, hasTransparency, alt, width, theClass,
   let metadata = await Image(src, {
     widths: targetWidths,
     formats: ["webp", baseFmt],
-    urlPath: "assets/img/",
+    urlPath: "/assets/img/",
     outputDir: "./dist/assets/img/"
   });
 
