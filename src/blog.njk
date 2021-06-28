@@ -86,9 +86,9 @@ permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}blog.htm
 </div>
 </div>
 
-<div id="news continued" class="w-full px-4 md:px-10 xl:px-16">
+<div id="news-continued" class="w-full px-4 md:px-10 xl:px-16">
 
-<h1 class="h2-main pt-4">News Continued</h1>
+<h1 class="h2-main pt-8">News Continued</h1>
 
 {% include "partials/post-grid.njk" %}
 
@@ -98,6 +98,9 @@ permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}blog.htm
 
 {% if collections.posts.length > site.paginate %}
 <div class="div-blog px-0 sm:px-12 mx-6 mt-6 py-6">
-{% include "partials/paginator.njk" %}
+    <div class="my-6 mt-3 flow-root">
+        <a href="{% if not paged.first %}{{ pagination.href.previous + '#news-continued' | url }}{% else %}javascript:void(0){% endif %}" class="btn-main rounded-full float-left bg-mousebirdLightBlue font-semibold py-2 px-4 border rounded shadow-md text-white {% if not paged.first %}cursor-pointer hover:bg-mousebirdBlue{% else %}cursor-default text-opacity-75{% endif %}">Previous</a>
+        <a href="{% if not paged.last %}{{ pagination.href.next + '#news-continued' | url }}{% else %}javascript:void(0){% endif %}" class="btn-main rounded-full float-right bg-mousebirdLightBlue font-semibold py-2 px-4 border rounded shadow-md text-white {% if not paged.last %}cursor-pointer hover:bg-mousebirdBlue{% else %}cursor-default text-opacity-75{% endif %}">Next</a>
+    </div>
 </div>
 {% endif %}
