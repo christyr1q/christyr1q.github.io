@@ -1,15 +1,17 @@
 ---
 layout: post
 title: "WhirlyGlobe-Maply 3.4"
-date: 2021-10-08
-thumb: "index_whirlyglobe_3_2.png"
+date: 2021-10-14
+thumb: "index_3_4.jpg"
 tags: ["whirlyglobe", "android", "ios", "style sheets", "vector tiles"]
 
 ---
 
 Version 3.4 is out and it is good.
 
-Wow does time ever fly.  Seems like I was just writing about version, er, 3.2.  We will not speak of 3.3.  It's fine, we just won't speak of it.
+Wow does time ever fly.  Seems like I was just writing about version, er, 3.2.  
+
+We will not speak of 3.3.  It's fine, we just won't speak of it.
 
 So what's in version 3.4 you ask?  Just give me a sec... I know I have it here somewhere.
 
@@ -65,9 +67,9 @@ On the functionality side, the style sheet and vector tile support is at or clos
 
 Some things are easier on iOS and it continues to be the platform where we do things first, largely because that's what we're paid to do.  Metal is a big part of that.
 
-There are some Metal related changes that speed things up, particularly on older devices, user memory more efficiently and let us do even more on the GPU.  The new version of wide vectors, for instance, is hidden now under "performance vectors" but we expect it to replace the general version soon.
+There are some Metal related changes that speed things up, particularly on older devices, use memory more efficiently and let us do even more on the GPU.  The new version of wide vectors, for instance, is hidden now under "performance vectors" but we expect it to replace the general version soon.
 
-Particles are back in a new form, but alas there's no good test case for them.  But they are implemented in a much more Metal-friendly way.
+Particles are back in a new form, but alas there's no good test case for them.  They are implemented in a much more Metal-friendly way.
 
 ## Mac Support / Catalyst
 
@@ -76,3 +78,5 @@ With Metal support on Mac OS/X we could, in theory, compile for the Mac.  We hav
 Catalyst is kind of slow on the older macs, but I'm told it's really good on the new ones.  So that's interesting.  The toolkit runs well and the only thing missing is better gestures for the mouse and keyboard.
 
 I look forward to the flood of WhirlyGlobe-Maply iOS/Mac apps.
+
+As always, if you have concerns feel free to add them to the github Issues and/or pay us.

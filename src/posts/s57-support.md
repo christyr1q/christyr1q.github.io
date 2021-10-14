@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "s57 Format for Boats"
-date: 2021-10-11
-thumb: "index_whirlyglobe_3_2.png"
+date: 2021-10-21
+thumb: "index_s57.jpg"
 tags: ["s57", "vectors", "whirlyglobe"]
 
 ---
