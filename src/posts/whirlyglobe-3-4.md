@@ -3,7 +3,7 @@ layout: post
 title: "WhirlyGlobe-Maply 3.4"
 date: 2021-10-08
 thumb: "index_whirlyglobe_3_2.png"
-tags: ["whirlyglobe"]
+tags: ["whirlyglobe", "android", "ios", "style sheets", "vector tiles"]
 
 ---
 
